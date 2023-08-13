@@ -17,7 +17,7 @@
 		FAB5F3D62A890A9900B5A5AC /* Braze_Version_2_0UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3D52A890A9900B5A5AC /* Braze_Version_2_0UITestsLaunchTests.swift */; };
 		FAB5F3EC2A89128B00B5A5AC /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3EB2A89128B00B5A5AC /* StatisticsModel.swift */; };
 		FAB5F3EE2A8912DE00B5A5AC /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3ED2A8912DE00B5A5AC /* MarketDataModel.swift */; };
-		FAB5F3F02A89130400B5A5AC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3EF2A89130400B5A5AC /* CoinModel.swift */; };
+		FAB5F3F02A89130400B5A5AC /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3EF2A89130400B5A5AC /* Coin.swift */; };
 		FAB5F3F22A89149300B5A5AC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3F12A89149300B5A5AC /* Extension.swift */; };
 		FAB5F3F42A8914AD00B5A5AC /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3F32A8914AD00B5A5AC /* PreviewProvider.swift */; };
 		FAB5F3F62A8914C400B5A5AC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3F52A8914C400B5A5AC /* Color.swift */; };
@@ -89,7 +89,7 @@
 		FAB5F3D52A890A9900B5A5AC /* Braze_Version_2_0UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Braze_Version_2_0UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAB5F3EB2A89128B00B5A5AC /* StatisticsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
 		FAB5F3ED2A8912DE00B5A5AC /* MarketDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
-		FAB5F3EF2A89130400B5A5AC /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoinModel.swift; path = ../../../Braze/Braze/Models/CoinModel.swift; sourceTree = "<group>"; };
+		FAB5F3EF2A89130400B5A5AC /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coin.swift; path = ../../../Braze/Braze/Models/Coin.swift; sourceTree = "<group>"; };
 		FAB5F3F12A89149300B5A5AC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FAB5F3F32A8914AD00B5A5AC /* PreviewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		FAB5F3F52A8914C400B5A5AC /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 		FAB5F3E52A890C6F00B5A5AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAB5F3EF2A89130400B5A5AC /* CoinModel.swift */,
+				FAB5F3EF2A89130400B5A5AC /* Coin.swift */,
 				FAB5F3ED2A8912DE00B5A5AC /* MarketDataModel.swift */,
 				FAB5F3EB2A89128B00B5A5AC /* StatisticsModel.swift */,
 				FAB5F3BE2A890A9800B5A5AC /* PortfolioEntity.xcdatamodeld */,
@@ -500,7 +500,7 @@
 				FAB5F42D2A89197400B5A5AC /* ExpandableText.swift in Sources */,
 				FAB5F4352A8919B700B5A5AC /* CoinDataService.swift in Sources */,
 				FAB5F4232A89191B00B5A5AC /* InputStyle.swift in Sources */,
-				FAB5F3F02A89130400B5A5AC /* CoinModel.swift in Sources */,
+				FAB5F3F02A89130400B5A5AC /* Coin.swift in Sources */,
 				FAB5F42E2A89197400B5A5AC /* HeaderView.swift in Sources */,
 				FAB5F3C02A890A9800B5A5AC /* PortfolioEntity.xcdatamodeld in Sources */,
 				FAB5F3F42A8914AD00B5A5AC /* PreviewProvider.swift in Sources */,
