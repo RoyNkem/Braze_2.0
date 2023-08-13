@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//Launch Animation
+//LaunchScreen Animation
 
 struct AnimatedCircle: View {
     

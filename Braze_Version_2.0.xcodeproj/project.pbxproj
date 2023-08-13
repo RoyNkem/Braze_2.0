@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA3C6BAC2A89686A00B9FFC8 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */; };
+		FA3C6BAF2A898B3D00B9FFC8 /* Braze_Version_2.0 in Resources */ = {isa = PBXBuildFile; fileRef = FA3C6BAE2A898B3D00B9FFC8 /* Braze_Version_2.0 */; };
+		FA3C6BB12A898B6000B9FFC8 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C6BB02A898B6000B9FFC8 /* LaunchScreenStateManager.swift */; };
 		FAB5F3B42A890A9400B5A5AC /* Braze_Version_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */; };
 		FAB5F3B62A890A9400B5A5AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B52A890A9400B5A5AC /* HomeView.swift */; };
 		FAB5F3B82A890A9800B5A5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB5F3B72A890A9800B5A5AC /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 /* Begin PBXFileReference section */
 		FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		FA3C6BAD2A8984BE00B9FFC8 /* Braze-Version-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Braze-Version-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FA3C6BAE2A898B3D00B9FFC8 /* Braze_Version_2.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Braze_Version_2.0; sourceTree = "<group>"; };
+		FA3C6BB02A898B6000B9FFC8 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		FAB5F3B02A890A9400B5A5AC /* Braze_Version_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braze_Version_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Braze_Version_2_0App.swift; sourceTree = "<group>"; };
 		FAB5F3B52A890A9400B5A5AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB5F3B22A890A9400B5A5AC /* Braze_Version_2.0 */,
+				FA3C6BAE2A898B3D00B9FFC8 /* Braze_Version_2.0 */,
 				FAB5F3C82A890A9800B5A5AC /* Braze_Version_2.0Tests */,
 				FAB5F3D22A890A9800B5A5AC /* Braze_Version_2.0UITests */,
 				FAB5F3B12A890A9400B5A5AC /* Products */,
@@ -259,6 +264,7 @@
 		FAB5F3E52A890C6F00B5A5AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA3C6BB02A898B6000B9FFC8 /* LaunchScreenStateManager.swift */,
 				FAB5F3ED2A8912DE00B5A5AC /* MarketDataModel.swift */,
 				FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */,
 				FAB5F3EB2A89128B00B5A5AC /* StatisticsModel.swift */,
@@ -456,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB5F3BB2A890A9800B5A5AC /* Preview Assets.xcassets in Resources */,
+				FA3C6BAF2A898B3D00B9FFC8 /* Braze_Version_2.0 in Resources */,
 				FAB5F3B82A890A9800B5A5AC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3C6BB12A898B6000B9FFC8 /* LaunchScreenStateManager.swift in Sources */,
 				FAB5F4372A8919B700B5A5AC /* MarketDataService.swift in Sources */,
 				FAB5F41B2A89188400B5A5AC /* ProfileButtons.swift in Sources */,
 				FAB5F3EE2A8912DE00B5A5AC /* MarketDataModel.swift in Sources */,
