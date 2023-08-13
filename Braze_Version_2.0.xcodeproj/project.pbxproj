@@ -77,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		FA3C6BAD2A8984BE00B9FFC8 /* Braze-Version-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Braze-Version-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FAB5F3B02A890A9400B5A5AC /* Braze_Version_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braze_Version_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Braze_Version_2_0App.swift; sourceTree = "<group>"; };
 		FAB5F3B52A890A9400B5A5AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		FAB5F3B22A890A9400B5A5AC /* Braze_Version_2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				FA3C6BAD2A8984BE00B9FFC8 /* Braze-Version-2-0-Info.plist */,
 				FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */,
 				FAB5F3EA2A890CA900B5A5AC /* Animations */,
 				FAB5F3E82A890C9800B5A5AC /* Assets */,
@@ -688,13 +690,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Braze_Version_2.0/Preview Content\"";
 				DEVELOPMENT_TEAM = 7UN46XANF2;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Braze-Version-2-0-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Braze;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -721,13 +726,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Braze_Version_2.0/Preview Content\"";
 				DEVELOPMENT_TEAM = 7UN46XANF2;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Braze-Version-2-0-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Braze;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

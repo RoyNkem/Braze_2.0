@@ -30,6 +30,7 @@ struct CoinROwViews_Previews: PreviewProvider {
         Group {
             CoinRowViews(coin: dev.coin)
                 .previewLayout(.sizeThatFits)
+                .preferredColorScheme(.light)
             
             CoinRowViews(coin: dev.coin)
                 .previewLayout(.sizeThatFits)

@@ -103,11 +103,11 @@ extension HomeView {
                 .resizable()
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)
-                .clipShape(RoundedRectangle(cornerSize: .init(width: radius/2, height: radius/2)))
-                .overlay(content: {
-                    RoundedRectangle(cornerRadius: radius/2)
-                        .stroke(Color.white, lineWidth: 1)
-                })
+                .clipShape(RoundedRectangle(cornerSize: .init(width: radius, height: radius)))
+//                .overlay(content: {
+//                    RoundedRectangle(cornerRadius: radius/2)
+//                        .stroke(Color.white, lineWidth: 1)
+//                })
                 .padding(.bottom, isSmallHeight() ? -5:-10)
             
             Text("Hello, Roy").bold()
@@ -119,9 +119,10 @@ extension HomeView {
             Button(action: {
                 showPortfolio.toggle()
             }) {
-                Image(systemName: "gear")
-                    .font(.system(size:isSmallHeight() ? 20:25))
+                Image(systemName: "chart.pie.fill")
+                    .font(.system(size:isSmallHeight() ? 23:28))
                     .foregroundColor(.white)
+                    .shadow(radius: 10, x: 2, y: 4)
             }
         }
         .padding(.bottom, isSmallHeight() ? 10:16)

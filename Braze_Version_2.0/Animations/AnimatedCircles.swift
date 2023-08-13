@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//Launch Animation
+
 struct AnimatedCircle: View {
     
     @State var width: CGFloat = 60
@@ -14,7 +16,7 @@ struct AnimatedCircle: View {
     private let offset = CGSize(width: -15, height: -15)
     @State var timer = Timer.publish(every: 3, on: .current, in: .common).autoconnect()
     @State var delayTime: Double = 0
-    private let customGrayColor = Color.theme.animationColorBackground
+    private let customGrayColor = Color.theme.homeBackground
     private let animationColor = Color.theme.purple.opacity(0.6)
     
     var body: some View {

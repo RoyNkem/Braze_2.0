@@ -70,6 +70,8 @@ struct PortfolioRowViews_Previews: PreviewProvider {
             PortfolioRowViews(text: "50%", coin: dev.coin)
                 .preferredColorScheme(.dark)
             PortfolioRowViews(text: "50%", coin: dev.coin)
+                .preferredColorScheme(.light)
+
         }
     }
 }
