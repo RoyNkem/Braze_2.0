@@ -18,7 +18,7 @@ struct Braze_Version_2_0App: App {
                 HomeView()
                     .navigationBarHidden(true)
             }
-            .environmentObject(vm) // If a view uses an @EnvironmentObject, you must create the model object by calling the environmentObject(_:) modifier on an ancestor view. HomeView uses the ThingStore object, so you create it in BrazeApp.swift when it creates HomeView
+            .environmentObject(vm) // If a view uses an @EnvironmentObject, you must create the model object by calling the environmentObject(_:) modifier on an ancestor view. HomeView uses the HomeViewModel object, so you create it in BrazeApp.swift when it creates HomeView
         }
     }
 }
