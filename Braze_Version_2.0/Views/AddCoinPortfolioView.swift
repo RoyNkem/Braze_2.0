@@ -2,7 +2,7 @@
 //  AddPortfolioView.swift
 //  Braze
 //
-//  Created by Roy Aiyetin on 09/10/2022.
+//  Created by Roy's MacBook M1 on 13/08/2023.
 //
 
 import SwiftUI
@@ -60,15 +60,15 @@ struct AddCoinPortfolioView: View {
             
             XMarkButton()
             
-            CoinInfoSnippetView(isShowingCard: $isShowingBottomCard,
-                                buttonTitle: isCoinInPortfolio() ? "Remove from Portfolio" : "Add to Portfolio",
-                                coin: (selectedCoin ?? (vm.allCoins.first)) ?? CoinModel.instance) {
-                
-                //remove selected coin from portfolio in Core Data stacks
-                if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == selectedCoin?.id }) {
-                    vm.deleteportfolio(coin: portfolioCoin)
-                }
-            }
+//            CoinInfoSnippetView(isShowingCard: $isShowingBottomCard,
+//                                buttonTitle: isCoinInPortfolio() ? "Remove from Portfolio" : "Add to Portfolio",
+//                                coin: (selectedCoin ?? (vm.allCoins.first)) ?? CoinModel.instance) {
+//                
+//                //remove selected coin from portfolio in Core Data stacks
+//                if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == selectedCoin?.id }) {
+//                    vm.deleteportfolio(coin: portfolioCoin)
+//                }
+//            }
         }
     }
     
