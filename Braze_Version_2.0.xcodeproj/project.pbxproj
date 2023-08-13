@@ -99,10 +99,16 @@
 			isa = PBXGroup;
 			children = (
 				FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */,
-				FAB5F3B52A890A9400B5A5AC /* ContentView.swift */,
-				FAB5F3B72A890A9800B5A5AC /* Assets.xcassets */,
+				FAB5F3EA2A890CA900B5A5AC /* Animations */,
+				FAB5F3E92A890CA000B5A5AC /* Styles */,
+				FAB5F3E82A890C9800B5A5AC /* Assets */,
+				FAB5F3E72A890C8B00B5A5AC /* Extensions */,
+				FAB5F3E62A890C7500B5A5AC /* Views */,
+				FAB5F3E52A890C6F00B5A5AC /* Models */,
+				FAB5F3E42A890C6700B5A5AC /* Components */,
+				FAB5F3E32A890C5F00B5A5AC /* Services */,
+				FAB5F3E22A890C5400B5A5AC /* Utilities */,
 				FAB5F3BC2A890A9800B5A5AC /* Persistence.swift */,
-				FAB5F3BE2A890A9800B5A5AC /* Braze_Version_2_0.xcdatamodeld */,
 				FAB5F3B92A890A9800B5A5AC /* Preview Content */,
 			);
 			path = Braze_Version_2.0;
@@ -131,6 +137,72 @@
 				FAB5F3D52A890A9900B5A5AC /* Braze_Version_2_0UITestsLaunchTests.swift */,
 			);
 			path = Braze_Version_2.0UITests;
+			sourceTree = "<group>";
+		};
+		FAB5F3E22A890C5400B5A5AC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FAB5F3E32A890C5F00B5A5AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAB5F3E42A890C6700B5A5AC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FAB5F3E52A890C6F00B5A5AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5F3BE2A890A9800B5A5AC /* Braze_Version_2_0.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAB5F3E62A890C7500B5A5AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5F3B52A890A9400B5A5AC /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAB5F3E72A890C8B00B5A5AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAB5F3E82A890C9800B5A5AC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5F3B72A890A9800B5A5AC /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAB5F3E92A890CA000B5A5AC /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		FAB5F3EA2A890CA900B5A5AC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
