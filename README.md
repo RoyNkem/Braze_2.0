@@ -140,13 +140,13 @@ _No API key or npm packages are required for the Braze app. Below are the steps 
 2. Navigate to the cloned directory:
 
    ```sh
-   cd Braze-App
+   cd Braze_2.0
    ```
    
 3. Run the App
    Launch the Braze app using a development server:
    ```sh
-   npm start
+   open Braze_2.0.xcodeproj
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
