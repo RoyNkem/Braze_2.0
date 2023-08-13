@@ -22,6 +22,8 @@ struct AngularButtonStyle: ButtonStyle {
             return 4
         case .large:
             return 12
+        case .extraLarge:
+            return 14
         @unknown default:
             return 0
         }
@@ -37,6 +39,8 @@ struct AngularButtonStyle: ButtonStyle {
             return 16
         case .large:
             return 20
+        case .extraLarge:
+            return 24
         @unknown default:
             return 12
         }
