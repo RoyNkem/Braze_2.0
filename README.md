@@ -33,7 +33,7 @@
     <img src="https://user-images.githubusercontent.com/95645767/197086805-88b33a07-54e6-42ec-8ea8-2782de4db61d.jpg" width="80" height="80" />
   </a>
 
-  <h3 align="center">Braze_2.0</h3>
+  <h3 align="center">Braze 2.0</h3>
 
   <p align="center">
     A cryptocurrency tracker with User Portfolio features to buy and swap coin.
