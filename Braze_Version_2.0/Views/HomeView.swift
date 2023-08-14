@@ -94,7 +94,6 @@ extension HomeView {
         .foregroundColor(.white)
         .font(.system(size: isSmallHeight() ? 11 : 13))
         .background(LinearGradient(colors: [Color.theme.blue, Color.theme.purple], startPoint: .leading, endPoint: .trailing))
-        //        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
     }
     
     //MARK: profileRow
@@ -105,10 +104,6 @@ extension HomeView {
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)
                 .clipShape(RoundedRectangle(cornerSize: .init(width: radius, height: radius)))
-            //                .overlay(content: {
-            //                    RoundedRectangle(cornerRadius: radius/2)
-            //                        .stroke(Color.white, lineWidth: 1)
-            //                })
                 .padding(.bottom, isSmallHeight() ? -5:-10)
             
             Text("Hello, Roy").bold()
@@ -126,7 +121,6 @@ extension HomeView {
                     .shadow(radius: 10, x: 2, y: 4)
             }
         }
-        //        .padding(.trailing)
         .padding(.bottom, isSmallHeight() ? 10:16)
     }
     
@@ -153,7 +147,6 @@ extension HomeView {
                 
             }
         }
-        //        .padding(.horizontal, isSmallHeight() ? 9:12)
     }
     
     //MARK: priceRow
@@ -186,7 +179,8 @@ extension HomeView {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, spacing: 15) {
                 ForEach(vm.statistics) { stat in
-                    MarketStatisticsCard(cardTitle: stat.cardTitle, marketValue: stat.value, stat: stat, coin: CoinModel.instance, colors: stat.colors)
+                    let statCoin = vm.allCoins.first
+                    MarketStatisticsCard(cardTitle: stat.cardTitle, marketValue: stat.value, stat: stat, coin: statCoin ?? CoinModel.instance, colors: stat.colors)
                 }
             }
         }
@@ -201,7 +195,6 @@ extension HomeView {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        //        .padding(.horizontal, isSmallHeight() ? 6:8)
         .padding(.vertical, isSmallHeight() ? 7:10)
     }
     

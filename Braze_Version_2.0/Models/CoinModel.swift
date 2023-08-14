@@ -68,7 +68,7 @@ struct CoinModel: Identifiable, Codable {
         return Int(marketCapRank ?? 0)
     }
     
-    static var instance = CoinModel(id: "Coin", symbol: "cn", name: "Coin", image: "App Icon", currentPrice: 2.65, marketCap: nil, marketCapRank: nil, fullyDilutedValuation: nil, totalVolume: nil, high24H: nil, low24H: nil, priceChange24H: nil, priceChangePercentage24H: nil, marketCapChange24H: nil, marketCapChangePercentage24H: nil, circulatingSupply: nil, totalSupply: nil, maxSupply: nil, ath: nil, athChangePercentage: nil, athDate: nil, atl: nil, atlChangePercentage: nil, atlDate: nil, lastUpdated: nil, sparklineIn7D: nil, priceChangePercentage24HInCurrency: nil, currentHoldings: nil)
+    static var instance = CoinModel(id: "btc", symbol: "cn", name: "Coin", image: "App Icon", currentPrice: 2.65, marketCap: nil, marketCapRank: nil, fullyDilutedValuation: nil, totalVolume: nil, high24H: nil, low24H: nil, priceChange24H: nil, priceChangePercentage24H: nil, marketCapChange24H: nil, marketCapChangePercentage24H: nil, circulatingSupply: nil, totalSupply: nil, maxSupply: nil, ath: nil, athChangePercentage: nil, athDate: nil, atl: nil, atlChangePercentage: nil, atlDate: nil, lastUpdated: nil, sparklineIn7D: nil, priceChangePercentage24HInCurrency: nil, currentHoldings: nil)
 }
 
 struct SparklineIn7D: Codable {

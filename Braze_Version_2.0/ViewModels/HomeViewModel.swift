@@ -25,9 +25,18 @@ class HomeViewModel: ObservableObject {
     private let portfolioDataService = PortfolioDataService()
     private let marketDataService = MarketDataService()
     
+    /// Enum representing sorting options for coin list.
     enum SortOption {
-        case rank, rankReversed, holdings, holdingsReversed, price, priceReversed
+        /// Rank-based sorting options.
+        case rank, rankReversed
+        
+        /// Holdings-based sorting options.
+        case holdings, holdingsReversed
+        
+        /// Price-based sorting options.
+        case price, priceReversed
     }
+
     
     init() {
         isLoading = true
@@ -37,14 +46,19 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    //MARK: Subscriptions
     func addSubscribers() {
         
-        //data service instance calls the func `get coin` which makes the network request and append the output coin to `allCoins`
-        //the received values of coins is stored in the publisher var `allCoins` for home VM to use in home view
+        // MARK: - Update Coin Display
+        // This code keeps the list of displayed coins up-to-date by performing the following steps:
+        // 1. Observes changes in the searchText, allCoins, and sortOption.
+        // 2. Combines these values for processing.
+        // 3. Waits for user input to stabilize with a 0.5-second delay.
+        // 4. Filters and sorts the coins based on search text and sort preference.
+        // 5. Updates the displayed coin list for the view to show.
+
         $searchText
             .combineLatest(coinDataService.$allCoins, $sortOption)
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main) //publishes the 2 publishers after 0.5 seconds to allow users type tangible texts
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterAndSortCoins)
             .sink { [weak self] (returnedCoins) in
                 
@@ -53,25 +67,42 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
-        //update Market Data
+        // MARK: - Update Market Statistics
+        // This code keeps the market statistics up-to-date with these steps:
+        // 1. Watches for changes in market data from the `marketDataService`.
+        // 2. Joins market data and portfolio coins using `combineLatest`.
+        // 3. Transforms the combined data to convert market data models into statistics models.
+        // 4. Subscribes to the transformed data using `sink`, refreshing the view's `statistics` and
+
         marketDataService.$marketData
             .combineLatest($portfolioCoins)
-            .map(mapGlobalMarketData) //transform the returned market data model type to statistics model
+            .map(mapGlobalMarketData)
             .sink { [weak self] (returnedStats) in
-                
+                // Ensure self is still valid
                 guard let self = self else { return }
+                
+                // Update statistics and isLoading properties
                 self.statistics = returnedStats
                 self.isLoading = false
             }
             .store(in: &cancellables)
         
-        //update Portfolio coins. Subscribe to the all coins arr (filtered version)
+        // MARK: - Update Portfolio Coins
+        // This code snippet keeps portfolio coins updated using these steps:
+        // 1. Observes changes in allCoins and saved portfolio entities.
+        // 2. Combines these values for processing.
+        // 3. Transforms combined data to map all coins into portfolio coins.
+        // 4. Subscribes to the transformed coins using `sink`, updating the view's `portfolioCoins`.
+        // 5. Manages subscriptions in the `cancellables` set to avoid memory issues.
+
         $allCoins
             .combineLatest(portfolioDataService.$savedEntities)
             .map(mapAllCoinsToPortfolioCoins)
             .sink { [weak self] (returnedCoins) in
+                // Ensure self is still valid
                 guard let self = self else { return }
                 
+                // Update portfolio coins after sorting
                 self.portfolioCoins = self.sortPortfolioCoinsIfNeeded(coins: returnedCoins)
             }
             .store(in: &cancellables)
@@ -152,7 +183,7 @@ class HomeViewModel: ObservableObject {
     }
     
     //MARK: func mapGlobalMarketData
-    private func mapGlobalMarketData(marketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticsModel] {
+    private func mapGlobalMarketData(marketDataModel: MarketDataModel?, coin: [CoinModel]?) -> [StatisticsModel] {
         var stats: [StatisticsModel] = []
         
         guard let data = marketDataModel else {
@@ -165,15 +196,10 @@ class HomeViewModel: ObservableObject {
         
         let btcDominance = StatisticsModel(title: "BTC Dominance", value: data.btcDominant, colors: [.theme.blue, .theme.red], cardTitle: "Most Traded Crypto")
                 
-//        let portfolio = StatisticsModel(title: "Portfolio Value",
-//                                        value: totalPortfolioCoinsValue().asCurrencyWithTwoDecimals(),
-//                                        percentageChange: totalPercentageChange(portfolioCoins: portfolioCoins),
-//                                        colors: [.theme.red, .orange], cardTitle: "Portfolio")
         stats.append(contentsOf: [
             marketCap,
             volume,
             btcDominance,
-//            portfolio
         ])
         return stats
     }
