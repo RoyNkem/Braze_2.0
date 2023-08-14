@@ -180,7 +180,7 @@ extension HomeView {
             LazyHGrid(rows: rows, spacing: 15) {
                 ForEach(vm.statistics) { stat in
                     let statCoin = vm.allCoins.first
-                    MarketStatisticsCard(cardTitle: stat.cardTitle, marketValue: stat.value, stat: stat, coin: statCoin ?? CoinModel.instance, colors: stat.colors)
+                    MarketStatisticsCard(stat: stat, coin: statCoin ?? CoinModel.instance)
                 }
             }
         }

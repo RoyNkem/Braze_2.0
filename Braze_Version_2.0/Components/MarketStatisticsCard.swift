@@ -9,12 +9,10 @@ import SwiftUI
 
 struct MarketStatisticsCard: View {
     
-    let cardTitle: String
-    let marketValue: String
     let stat: StatisticsModel
     let coin: CoinModel
     let imageSize: CGFloat = 30.0
-    let colors: [Color]
+//    let colors: [Color]
     
     var body: some View {
         
@@ -33,7 +31,7 @@ struct MarketStatisticsCard: View {
 //MARK: - PREVIEW PROVIDER
 struct MarketStatisticsCard_Previews: PreviewProvider {
     static var previews: some View {
-        MarketStatisticsCard(cardTitle: "Top Performer", marketValue: "6.8", stat: dev.stat1, coin: dev.coin, colors: [.theme.red, Color.orange])
+        MarketStatisticsCard(stat: dev.stat1, coin: dev.coin)
             .previewLayout(.sizeThatFits)
             .padding(20)
     }
@@ -46,7 +44,7 @@ extension MarketStatisticsCard {
     private var topPerformingCoinSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             
-            Text(cardTitle)
+            Text(stat.cardTitle)
                 .custom(font: .regular, size: isSmallHeight() ? 11:14)
             
             VStack(alignment: .leading) {
@@ -71,7 +69,7 @@ extension MarketStatisticsCard {
                             .rotationEffect( //rotate the arrow depending on profit or loss
                                 Angle(degrees:(stat.percentageChange ?? 0) >= 0 ? 0:180))
                         
-                        Text(marketValue)
+                        Text(stat.value)
                         
                     }
                     
@@ -83,7 +81,7 @@ extension MarketStatisticsCard {
         .foregroundColor(.white)
         .padding(.vertical, 10)
         .padding(.horizontal)
-        .background(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(LinearGradient(colors: stat.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20, corners: [.topLeft, .topRight])
     }
     
