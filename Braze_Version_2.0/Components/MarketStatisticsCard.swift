@@ -30,6 +30,7 @@ struct MarketStatisticsCard: View {
     
 }
 
+//MARK: - PREVIEW PROVIDER
 struct MarketStatisticsCard_Previews: PreviewProvider {
     static var previews: some View {
         MarketStatisticsCard(cardTitle: "Top Performer", marketValue: "6.8", stat: dev.stat1, coin: dev.coin, colors: [.theme.red, Color.orange])

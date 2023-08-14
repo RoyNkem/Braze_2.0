@@ -42,6 +42,7 @@ struct HomeView: View {
                         columnTitles
                     }
                     allCoinsList
+                        .padding(.horizontal)
                         .transition(.move(edge: .trailing))
                 } else {
                     portfolioCoinsList
@@ -93,7 +94,7 @@ extension HomeView {
         .foregroundColor(.white)
         .font(.system(size: isSmallHeight() ? 11 : 13))
         .background(LinearGradient(colors: [Color.theme.blue, Color.theme.purple], startPoint: .leading, endPoint: .trailing))
-        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
+        //        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
     }
     
     //MARK: profileRow
@@ -104,10 +105,10 @@ extension HomeView {
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)
                 .clipShape(RoundedRectangle(cornerSize: .init(width: radius, height: radius)))
-//                .overlay(content: {
-//                    RoundedRectangle(cornerRadius: radius/2)
-//                        .stroke(Color.white, lineWidth: 1)
-//                })
+            //                .overlay(content: {
+            //                    RoundedRectangle(cornerRadius: radius/2)
+            //                        .stroke(Color.white, lineWidth: 1)
+            //                })
                 .padding(.bottom, isSmallHeight() ? -5:-10)
             
             Text("Hello, Roy").bold()
@@ -125,7 +126,7 @@ extension HomeView {
                     .shadow(radius: 10, x: 2, y: 4)
             }
         }
-        .padding(.trailing)
+        //        .padding(.trailing)
         .padding(.bottom, isSmallHeight() ? 10:16)
     }
     
@@ -152,7 +153,7 @@ extension HomeView {
                 
             }
         }
-        .padding(.horizontal, isSmallHeight() ? 9:12)
+        //        .padding(.horizontal, isSmallHeight() ? 9:12)
     }
     
     //MARK: priceRow
@@ -166,7 +167,7 @@ extension HomeView {
                 .padding(5)
                 .background(Color.green.opacity(0.7))
                 .cornerRadius(10)
-                .padding(.leading)
+                .padding(.leading, isSmallWidth() ? 7:10)
                 .offset(y: -10)
         }
         .padding(.top, isSmallHeight() ? -9:-12)
@@ -177,7 +178,7 @@ extension HomeView {
     private var searchbar: some View {
         SearchBarView(searchText: $vm.searchText, showSearchBar: $showSearchBar, showPortfolio: $showPortfolio)
             .padding(.top, isSmallHeight() ? 2:4)
-            .padding(.horizontal, 5)
+            .padding(.leading, 5)
     }
     
     //MARK: statisticsCard
@@ -189,7 +190,7 @@ extension HomeView {
                 }
             }
         }
-        .padding(.leading)
+        .padding(.leading, 16)
     }
     
     //MARK: allCoinsList
@@ -200,7 +201,7 @@ extension HomeView {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, isSmallHeight() ? 6:8)
+        //        .padding(.horizontal, isSmallHeight() ? 6:8)
         .padding(.vertical, isSmallHeight() ? 7:10)
     }
     
@@ -242,53 +243,48 @@ extension HomeView {
     
     //MARK: columnTitles
     private var columnTitles: some View {
-        
-        HStack {
-            HStack {
+        HStack(spacing: 0) { // Added spacing: 0 to remove any spacing between HStacks
+            HStack(alignment: .center) {
                 Text("Coin")
                 Image(systemName: "chevron.down")
-                    .opacity(vm.sortOption == .rank || vm.sortOption == .rankReversed ? 1.0:0.0)
-                    .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0:180))
+                    .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0 : 180))
             }
-            .offset(x: 25)
-            .frame(width: UIScreen.main.bounds.width / 3, alignment: .leading)
+            .frame(maxWidth: .infinity) // Expand to fill available space
             .onTapGesture {
                 withAnimation {
-                    vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
+                    vm.sortOption = (vm.sortOption == .rank) ? .rankReversed : .rank
                 }
             }
-
-            Spacer()
             
-            HStack {
+            Spacer() // Equidistant spacing
+            
+            HStack(alignment: .center) {
                 Text("Last Price")
                 Image(systemName: "chevron.down")
-                    .opacity(vm.sortOption == .price || vm.sortOption == .priceReversed ? 1.0:0.0)
-                    .rotationEffect(Angle(degrees: vm.sortOption == .price ? 0:180))
+                    .rotationEffect(Angle(degrees: vm.sortOption == .price ? 0 : 180))
             }
-            .offset(x: isSmallHeight() ? 15:20)
-            .frame(width: UIScreen.main.bounds.width / 3, alignment: .leading)
+            .frame(maxWidth: .infinity)
             .onTapGesture {
                 withAnimation {
-                    vm.sortOption = vm.sortOption == .price ? .priceReversed : .price
+                    vm.sortOption = (vm.sortOption == .price) ? .priceReversed : .price
                 }
             }
             
-            HStack(spacing: 5) {
+            Spacer() // Equidistant spacing
+            
+            HStack(alignment: .center) {
                 Text("24h chg%")
-                    .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
                 Image(systemName: "goforward")
-                    .rotationEffect(Angle(degrees: vm.isLoading ? 360:0), anchor: .center)
+                    .rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
                     .font(.caption)
             }
-            .offset(x: -20)
-            .frame(width: UIScreen.main.bounds.width / 3, alignment: .leading)
-
+            .frame(maxWidth: .infinity)
         }
-        .custom(font: .regular, size: isSmallWidth() ? 12:14)
+        .custom(font: .regular, size: isSmallWidth() ? 12 : 14)
         .foregroundColor(.theme.secondary)
-        .padding(.top, isSmallHeight() ? 8:12)
-        .padding(.bottom, isSmallHeight() ? -6:-8)
+        .padding(.top, isSmallHeight() ? 8 : 12)
+        .padding(.bottom, isSmallHeight() ? -6 : -8)
     }
+    
     
 }
