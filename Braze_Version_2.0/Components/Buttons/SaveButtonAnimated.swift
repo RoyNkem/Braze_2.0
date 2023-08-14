@@ -51,7 +51,7 @@ struct SaveButtonAnimated: View {
                     }
                     
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(.linearGradient(colors: [Color(.systemBackground), Color(.systemBackground).opacity(0.6)], startPoint: .top, endPoint: .bottom))
+                        .fill(.linearGradient(colors: [Color(.homeBackground), Color(.systemBackground).opacity(0.6)], startPoint: .top, endPoint: .bottom))
                         .blendMode(.luminosity)
                         .frame(width: (status == .started) ? 60 : 60,
                                height: (status == .started) ? 30 : 30)
@@ -62,7 +62,7 @@ struct SaveButtonAnimated: View {
                     if status != .finished {
                         Text("Save")
                             .font(.system(size: isSmallHeight() ? 14:16, weight: .bold))
-                            .foregroundColor(.black.opacity(0.7))
+                            .foregroundColor(.accentColor.opacity(0.8))
                             .opacity((status == .started) ? 0 : 1)
 //                            .opacity((status == .ready) ? 1 : 0)
 //                            .animation(.linear(duration: animationTime - 0.1))
@@ -73,7 +73,7 @@ struct SaveButtonAnimated: View {
                         .resizable()
                         .frame(width: 16, height: 16)
                         .font(.system(size: 20, weight: .heavy))
-                        .foregroundColor(.black.opacity(0.7))
+                        .foregroundColor(.accentColor.opacity(0.7))
                         .opacity((status == .finished) ? 1 : 0)
                         .animation(.easeInOut(duration: 0.3), value: status == .finished)
                 }
@@ -115,5 +115,6 @@ struct SaveButtonAnimated_Previews: PreviewProvider {
         SaveButtonAnimated() {
             print("save button clicked")
         }
+        .preferredColorScheme(.dark)
     }
 }

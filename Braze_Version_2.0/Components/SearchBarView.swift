@@ -66,6 +66,7 @@ struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         SearchBarView(searchText: .constant(""), showSearchBar: .constant(true), showPortfolio: .constant(false))
             .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
     }
 }
 

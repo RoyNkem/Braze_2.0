@@ -60,24 +60,26 @@ struct AddCoinPortfolioView: View {
             
             XMarkButton()
             
-//            CoinInfoSnippetView(isShowingCard: $isShowingBottomCard,
-//                                buttonTitle: isCoinInPortfolio() ? "Remove from Portfolio" : "Add to Portfolio",
-//                                coin: (selectedCoin ?? (vm.allCoins.first)) ?? CoinModel.instance) {
-//                
-//                //remove selected coin from portfolio in Core Data stacks
-//                if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == selectedCoin?.id }) {
-//                    vm.deleteportfolio(coin: portfolioCoin)
-//                }
-//            }
+            CoinInfoSnippetView(isShowingCard: $isShowingBottomCard,
+                                buttonTitle: isCoinInPortfolio() ? "Remove from Portfolio" : "Add to Portfolio",
+                                coin: (selectedCoin ?? (vm.allCoins.first)) ?? CoinModel.instance) {
+                
+                //remove selected coin from portfolio in Core Data stacks
+                if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == selectedCoin?.id }) {
+                    vm.deleteportfolio(coin: portfolioCoin)
+                }
+            }
         }
     }
     
 }
 
+
+//MARK: - PREVIEW
 struct AddCoinPortfolioView_Previews: PreviewProvider {
     static var previews: some View {
         AddCoinPortfolioView()
-        //            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
             .environmentObject(dev.homeVM)
     }
 }
@@ -96,7 +98,7 @@ extension AddCoinPortfolioView {
             SaveButtonAnimated() {
                 saveButtonPressed()
             }
-            .opacity(selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText) ? 1.0:0.0)
+            .opacity(selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText) ? 1.0:0.0) //show button if coin is selected and coin quantity is entered
         }
         .padding(.horizontal)
         .padding(.bottom, 10)
@@ -124,7 +126,7 @@ extension AddCoinPortfolioView {
                             UIApplication.shared.didEndEditing()
                         }
                         .background(
-                            RoundedRectangle(cornerRadius: isSmallHeight() ? 9:12)
+                            RoundedRectangle(cornerRadius: isSmallHeight() ? 12:14)
                                 .stroke(selectedCoin?.id == coin.id ?
                                         selectedGradient : clearGradient,
                                         lineWidth: isSmallHeight() ? 1.5:2.5
@@ -136,19 +138,19 @@ extension AddCoinPortfolioView {
         }
     }
     
-    //MARK: addCoinQuantity
+    //MARK: addCoinQuantityTextField
     private var addCoinQuantityField: some View {
         VStack(spacing: isSmallHeight() ? 12:20) {
             TextField(textFieldPlaceholder(), text: $quantityText)
                 .custom(font: .medium, size: isSmallHeight() ? 15:18)
-                .foregroundColor( isCoinInPortfolio() ? .black.opacity(0.5) : .black) //  change the color of the text if the coin is saved in Core Data Stacks
+                .foregroundColor( isCoinInPortfolio() ? .black.opacity(0.5) : .accentColor) //  change the color of the text if the coin is saved in Core Data Stacks
                 .inputStyle(icon: "mail")
                 .keyboardType(.decimalPad)
                 .disableAutocorrection(true)
                 .shadow(color: focusedField == .coinQuantity ? .primary.opacity(0.3) : .primary.opacity(0.3), radius: 10, x: 1, y: 3)
             
             HStack {
-                Text("Current Value of Quantity:")
+                Text("Current Value of Quantity added:")
                 Spacer()
                 Text(getCurrentValue().asCurrencyWithTwoDecimals())
                     .bold()
@@ -161,7 +163,7 @@ extension AddCoinPortfolioView {
         if isCoinInPortfolio() {
             return "You are holding \(selectedCoin?.currentHoldings ?? 0) vol of \(selectedCoin?.symbol.uppercased() ?? "")"
         } else {
-            return "Enter Quantity to add"
+            return "Enter Coin Quantity to add"
         }
     }
     

@@ -66,7 +66,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView()
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(.light)
         }
         .environmentObject(dev.homeVM)
     }
@@ -120,11 +120,12 @@ extension HomeView {
                 showPortfolio.toggle()
             }) {
                 Image(systemName: "chart.pie.fill")
-                    .font(.system(size:isSmallHeight() ? 23:28))
+                    .font(.system(size:isSmallHeight() ? 25:30))
                     .foregroundColor(.white)
                     .shadow(radius: 10, x: 2, y: 4)
             }
         }
+        .padding(.trailing)
         .padding(.bottom, isSmallHeight() ? 10:16)
     }
     

@@ -56,11 +56,14 @@ struct CoinInfoSnippetView: View {
     
 }
 
+
+//MARK: - PREVIEW
 struct CoinInfoSnippetView_Previews: PreviewProvider {
     static var previews: some View {
         CoinInfoSnippetView(isShowingCard: .constant(true), buttonTitle: "Add to My Portfolio", coin: dev.coin) {
             print("button clicked")
         }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -83,7 +86,7 @@ extension CoinInfoSnippetView {
                 
                 //MARK: Coin Description
                 //fetch coin summary
-                ExpandableText("Create a ZStack with unbounded height to allow the inner Text as much, Render the limited text and measure its size, Hide the background Indicates whether the text has been truncated in its display. Create a ZStack with unbounded height to allow the inner Text as much, Render the limited text and measure its size, Hide the background Indicates whether the text has been truncated in its display. Create a ZStack with unbounded height to allow the inner Text as much, Render the limited text and measure its size, Hide the background Indicates whether the text has been truncated in its display.", lineLimit: 2)
+                ExpandableText("Bitcoin, a pioneering digital currency, is reshaping how we perceive money. Born in 2009, it's decentralized and operates on blockchain technology. It offers secure, transparent transactions without intermediaries like banks. Bitcoin's scarcity is built into its code, capping supply at 21 million coins. Its value can fluctuate wildly, attracting investors and enthusiasts alike. Bitcoin enables borderless transactions, empowering those without access to traditional banking. While its future is uncertain, its impact on the financial landscape is undeniable.", lineLimit: 2)
                     .foregroundColor(.theme.secondary)
                     .custom(font: .medium, size: 16)
                     .lineLimit(2)
@@ -107,7 +110,7 @@ extension CoinInfoSnippetView {
                             .frame(maxWidth: .infinity)
                             .background(
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                    .foregroundColor(.theme.blackWhite)
+                                    .foregroundColor(.theme.blue)
                             )
                     }
                     .shadow(color: .theme.background.opacity(0.5), radius: 10)
