@@ -109,7 +109,7 @@ Using `Combine` framework with `Subscribers/Publishers` for efficient Data loadi
 - [x] Light/dark mode 
 - [x] Live prices
 - [x] User Portfolio 
-- [ ] iphone and ipad support
+- [ ] iPad support
 - [x] MVVM architecture
 - [x] Search Features
 - [x] Details of Coins 
