@@ -1,1 +1,64 @@
+# Ignore Xcode build products, user-specific settings, and shared schemes
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.xcuserdata
+*.xcworkspace
+xcuserdata/
+*.xcodeproj/xcuserdata/
+project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Ignore Swift Package Manager artifacts
+.build/
+
+# Ignore Cocoapods
+Pods/
+Podfile.lock
+
+# Ignore generated files
+*.DS_Store
+*.swp
+*~
+
+# Ignore user-specific and IDE-specific files
+.idea/
+.vscode/
+
+# Ignore sensitive files
+*.env
+*.p12
+*.cert
+*.key
+*.password
+*.secret
+
+# Ignore user-specific and machine-specific configuration files
+*.xcuserstate
+
+# Ignore local data storage (e.g., Core Data SQLite files)
+*.sqlite
+
+# Ignore local debugging artifacts
+*.log
+debug.log
+
+# Ignore Mac system files
+.AppleDouble
+.DS_Store
+.LSOverride
+
+# Preserve specific files or directories
+!Assets/ # Exclude assets (images, icons, etc.)
+!Config/ # Exclude configuration files
+!Resources/ # Exclude other resource files
+
+# Ignore build artifacts
+build/
+*.xcodeproj/project.xcworkspace/xcuserdata/
 
