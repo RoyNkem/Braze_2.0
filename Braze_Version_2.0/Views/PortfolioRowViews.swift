@@ -27,9 +27,11 @@ struct PortfolioRowViews: View {
             VStack(alignment: .leading, spacing: spacing) {
                 Text(coin.name)
                     .custom(font: .bold, size: isSmallHeight() ? 14:18)
+                    .foregroundColor(.white)
+
                 Text(text)
                     .custom(font: .medium, size: isSmallHeight() ? 12:16)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.theme.appAccentColor.opacity(0.65))
             }
             .font(.system(size: isSmallWidth() ? 15:19, weight: .regular, design: .rounded))
             
@@ -50,7 +52,7 @@ struct PortfolioRowViews: View {
 
                 Text(coin.currentHoldingsValue.asCurrencyWithTwoDecimals())
                     .custom(font: .medium, size: isSmallHeight() ? 14:18)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.theme.appAccentColor)
                     .cornerRadius(5)
             }
             
@@ -66,7 +68,7 @@ struct PortfolioRowViews: View {
 
 struct PortfolioRowViews_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
+        Group {
             PortfolioRowViews(text: "50%", coin: dev.coin)
                 .preferredColorScheme(.dark)
             PortfolioRowViews(text: "50%", coin: dev.coin)

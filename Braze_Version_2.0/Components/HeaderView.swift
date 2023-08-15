@@ -44,9 +44,7 @@ struct HeaderView: View {
             .padding(.vertical)
             .padding(.horizontal, 30)
             .background(
-                Image("Background 1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+                LinearGradient(colors: [Color.theme.red, Color.theme.purple], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .offset(y: scrollY > 0 ? -scrollY : 0)
                     .scaleEffect(scrollY > 0 ? scrollY / 1000 + 1 : 1)
                     .blur(radius: scrollY / 10 + 4)
@@ -63,6 +61,11 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        Group {
+            HeaderView()
+            
+            HeaderView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

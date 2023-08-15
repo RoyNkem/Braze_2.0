@@ -12,7 +12,6 @@ struct MarketStatisticsCard: View {
     let stat: StatisticsModel
     let coin: CoinModel
     let imageSize: CGFloat = 30.0
-//    let colors: [Color]
     
     var body: some View {
         

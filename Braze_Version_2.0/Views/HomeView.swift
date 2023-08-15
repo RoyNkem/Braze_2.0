@@ -68,6 +68,9 @@ struct HomeView_Previews: PreviewProvider {
         Group {
             HomeView()
                 .preferredColorScheme(.light)
+            
+            HomeView()
+                .preferredColorScheme(.dark)
         }
         .environmentObject(dev.homeVM)
     }

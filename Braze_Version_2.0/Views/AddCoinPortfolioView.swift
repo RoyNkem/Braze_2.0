@@ -118,6 +118,7 @@ extension AddCoinPortfolioView {
                 ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
+                        .padding(5)
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 selectedCoin = coin
