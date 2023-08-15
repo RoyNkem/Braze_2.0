@@ -38,7 +38,7 @@
   <p align="center">
     A cryptocurrency tracker with User Portfolio features to buy and swap coin.
     <br />
-    <a href="https://youtu.be/JjSvERheCY4">View Demo</a>
+    <a href="https://youtu.be/L1K2dLpag9Q">View Demo</a>
   </p>
 </div>
 
