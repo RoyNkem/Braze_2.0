@@ -24,7 +24,7 @@
 		FAB5F3F82A89152D00B5A5AC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3F72A89152D00B5A5AC /* Double.swift */; };
 		FAB5F3FA2A89157F00B5A5AC /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3F92A89157F00B5A5AC /* ScaledFont.swift */; };
 		FAB5F3FC2A89167100B5A5AC /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3FB2A89167000B5A5AC /* Animation.swift */; };
-		FAB5F3FE2A89167E00B5A5AC /* AnimatedCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3FD2A89167E00B5A5AC /* AnimatedCircles.swift */; };
+		FAB5F3FE2A89167E00B5A5AC /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3FD2A89167E00B5A5AC /* LaunchScreenView.swift */; };
 		FAB5F4012A89171E00B5A5AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F4002A89171E00B5A5AC /* HomeViewModel.swift */; };
 		FAB5F4072A89176600B5A5AC /* PortfolioRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F4022A89176500B5A5AC /* PortfolioRowViews.swift */; };
 		FAB5F4082A89176600B5A5AC /* CoinRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F4032A89176500B5A5AC /* CoinRowViews.swift */; };
@@ -98,7 +98,7 @@
 		FAB5F3F72A89152D00B5A5AC /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FAB5F3F92A89157F00B5A5AC /* ScaledFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		FAB5F3FB2A89167000B5A5AC /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		FAB5F3FD2A89167E00B5A5AC /* AnimatedCircles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedCircles.swift; sourceTree = "<group>"; };
+		FAB5F3FD2A89167E00B5A5AC /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		FAB5F4002A89171E00B5A5AC /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FAB5F4022A89176500B5A5AC /* PortfolioRowViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRowViews.swift; sourceTree = "<group>"; };
 		FAB5F4032A89176500B5A5AC /* CoinRowViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinRowViews.swift; sourceTree = "<group>"; };
@@ -273,6 +273,7 @@
 		FAB5F3E62A890C7500B5A5AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAB5F3FD2A89167E00B5A5AC /* LaunchScreenView.swift */,
 				FAB5F3B52A890A9400B5A5AC /* HomeView.swift */,
 				FAB5F4052A89176600B5A5AC /* AddCoinPortfolioView.swift */,
 				FAB5F4062A89176600B5A5AC /* CoinInfoSnippetView.swift */,
@@ -319,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB5F3FB2A89167000B5A5AC /* Animation.swift */,
-				FAB5F3FD2A89167E00B5A5AC /* AnimatedCircles.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 				FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */,
 				FAB5F4252A89191B00B5A5AC /* StrokeStyle.swift in Sources */,
 				FAB5F4192A89188400B5A5AC /* CircleButtonView.swift in Sources */,
-				FAB5F3FE2A89167E00B5A5AC /* AnimatedCircles.swift in Sources */,
+				FAB5F3FE2A89167E00B5A5AC /* LaunchScreenView.swift in Sources */,
 				FAB5F4012A89171E00B5A5AC /* HomeViewModel.swift in Sources */,
 				FAB5F41A2A89188400B5A5AC /* XMarkButton.swift in Sources */,
 				FAB5F4112A89187600B5A5AC /* CoinImageViewModel.swift in Sources */,
