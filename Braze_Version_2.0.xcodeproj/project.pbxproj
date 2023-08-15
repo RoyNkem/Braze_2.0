@@ -56,6 +56,7 @@
 		FAB5F43D2A891AEE00B5A5AC /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F4392A891AEE00B5A5AC /* PreferenceKeys.swift */; };
 		FAB5F43E2A891AEE00B5A5AC /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */; };
 		FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */; };
+		FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		FAB5F4392A891AEE00B5A5AC /* PreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 		FAB5F3E52A890C6F00B5A5AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */,
 				FAB5F3ED2A8912DE00B5A5AC /* MarketDataModel.swift */,
 				FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */,
 				FAB5F3EB2A89128B00B5A5AC /* StatisticsModel.swift */,
@@ -513,6 +516,7 @@
 				FAB5F43E2A891AEE00B5A5AC /* HapticManager.swift in Sources */,
 				FAB5F41C2A89188400B5A5AC /* LongButton.swift in Sources */,
 				FAB5F4342A8919B700B5A5AC /* PortfolioDataService.swift in Sources */,
+				FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */,
 				FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */,
 				FAB5F4252A89191B00B5A5AC /* StrokeStyle.swift in Sources */,
 				FAB5F4192A89188400B5A5AC /* CircleButtonView.swift in Sources */,

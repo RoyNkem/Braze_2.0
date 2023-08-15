@@ -9,7 +9,7 @@ import SwiftUI
 
 //Launch Animation
 
-struct AnimatedCircle: View {
+struct LaunchScreenView: View {
     
     @State var width: CGFloat = 60
     @State var status: [Bool] = Array(repeating: false, count: 7)
@@ -231,9 +231,9 @@ struct AnimatedCircle: View {
 }
 
 //MARK: Preview
-struct AnimatedCircle_Previews: PreviewProvider {
+struct LaunchScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimatedCircle()
-            .preferredColorScheme(.dark)
+        LaunchScreenView()
+            .preferredColorScheme(.light)
     }
 }
