@@ -214,6 +214,10 @@ class HomeViewModel: ObservableObject {
     
     func totalPercentageChange(portfolioCoins: [CoinModel]) -> Double {
         //get the price change over 24hrs
+        guard !portfolioCoins.isEmpty else {
+                return 0.00
+            }
+        
         let portfolioVal = totalPortfolioCoinsValue()
         
         let previousVal =

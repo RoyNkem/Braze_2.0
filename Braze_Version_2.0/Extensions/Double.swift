@@ -72,7 +72,7 @@ extension Double {
     /// Returns a string representation of a double with 2 decimal places
     /// ```
     /// Examples:
-    /// Convert 1.23456 to "1.234"
+    /// Convert 1.23456 to "1.23"
     /// ```
     func asNumberString() -> String {
         return String(format: "%.2f", self)

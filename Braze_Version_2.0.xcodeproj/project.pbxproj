@@ -57,6 +57,7 @@
 		FAB5F43E2A891AEE00B5A5AC /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */; };
 		FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */; };
 		FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */; };
+		FAF5969F2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
+		FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		FAB5F3E22A890C5400B5A5AC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */,
 				FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */,
 				FAB5F4382A891AEE00B5A5AC /* LocalFileManager.swift */,
 				FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */,
@@ -502,6 +505,7 @@
 				FAB5F40B2A89176600B5A5AC /* CoinInfoSnippetView.swift in Sources */,
 				FAB5F3EC2A89128B00B5A5AC /* StatisticsModel.swift in Sources */,
 				FAB5F4072A89176600B5A5AC /* PortfolioRowViews.swift in Sources */,
+				FAF5969F2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift in Sources */,
 				FAB5F3FA2A89157F00B5A5AC /* ScaledFont.swift in Sources */,
 				FAB5F42D2A89197400B5A5AC /* ExpandableText.swift in Sources */,
 				FAB5F4352A8919B700B5A5AC /* CoinDataService.swift in Sources */,

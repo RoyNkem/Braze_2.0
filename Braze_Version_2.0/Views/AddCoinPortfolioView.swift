@@ -43,6 +43,7 @@ struct AddCoinPortfolioView: View {
                         
                         if selectedCoin != nil { //show field calculator
                             inputCoinQuantityField
+                                .modifier(KeyboardAdaptive())
                         }
                     }
                     .padding(.vertical)
@@ -215,6 +216,7 @@ extension AddCoinPortfolioView {
         .custom(font: .medium, size: isSmallHeight() ? 13:16)
     }
     
+    //MARK: - Save Button
     private func saveButtonPressed() {
         
         guard
@@ -225,7 +227,6 @@ extension AddCoinPortfolioView {
         // save to portfolio
         vm.updatePortfolio(coin: coin, amount: amount)
         
-        //show save Button
         withAnimation(.easeIn) {
             removeSelectedCoin()
         }
@@ -234,7 +235,7 @@ extension AddCoinPortfolioView {
         UIApplication.shared.didEndEditing()
         
         //hide save button
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             withAnimation {
                 showSaveButton =  false
             }
