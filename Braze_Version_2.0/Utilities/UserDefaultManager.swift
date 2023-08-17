@@ -51,6 +51,7 @@ struct UserDefaultManager {
     
 }
 
+//MARK: - Error Handling Mechanism
 enum UserDefaultError: Error {
     case dataSaveFailed
     case dataDeleteFailed

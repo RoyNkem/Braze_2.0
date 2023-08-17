@@ -51,19 +51,17 @@ struct LoginView: View {
                 tap = true
                 if !userName.isEmpty {
                     isAnimationActive = true
-                    // Save user's name and selectedImage using UserDefaultManager
-                    if let profileImageData = selectedImage?.jpegData(compressionQuality: 0.8) {
-                        do {
-                            try userdefault.saveUserData(username: userName,
-                                                         profileImageData: profileImageData
-                            )
-                        } catch {
-                            // Handle error if saving fails
-                            print("Error saving user data: \(error)")
+                    
+                    do {
+                        try saveUserData()
+                        
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            //navigation logic here
                         }
-                    }
-                    withAnimation(.easeInOut(duration: 0.5)) {
-
+                    } catch let err as UserDefaultError {
+                        handleUserDefaultError(err)
+                    } catch {
+                        handleOtherError(error)
                     }
                 }
             }
@@ -101,18 +99,37 @@ struct LoginView: View {
                 .scaledToFit()
                 .frame(width: isSmallHeight() ? 70:80, height: isSmallHeight() ? 70:80)
                 .clipShape(Circle())
-
+            
         }
         .offset(y: isAnimationActive ? -150 : 0) // Offset the image when animation is active
     }
     
     //MARK: - welcomeText
+    
     private func welcomeText(greeting: String = "Welcome!", name: String = "") -> some View {
         Text("\(greeting) \(name)")
             .custom(font: .bold, size: tap ? 28:32)
             .padding()
             .offset(y: isAnimationActive ? 50 : 0) // Offset the image when animation is active
+        
+    }
+    
+    // MARK: - Helper Methods
 
+    private func saveUserData() throws {
+        let defaultImage = UIImage(systemName: "person.circle.fill")!
+        let selectedImageData = selectedImage?.jpegData(compressionQuality: 0.8) ?? defaultImage.jpegData(compressionQuality: 0.8)!
+        
+        try userdefault.saveUserData(username: userName, profileImageData: selectedImageData)
+    }
+
+    private func handleUserDefaultError(_ error: UserDefaultError) {
+        let errorDescription = UserDefaultErrorHandler.description(for: error)
+        print("UserDefaultError: \(errorDescription)")
+    }
+
+    private func handleOtherError(_ error: Error) {
+        print("Error saving user data: \(error)")
     }
 }
 
