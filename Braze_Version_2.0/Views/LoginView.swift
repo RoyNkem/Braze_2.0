@@ -12,7 +12,7 @@ struct LoginView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     @State private var isAnimationActive = false
-    @State private var tap = false
+    @State private var isButtonTapped = false
     // Create a constant to store the reference to UserDefaultManager.shared
     private let userdefault = UserDefaultManager.shared
     
@@ -26,7 +26,7 @@ struct LoginView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                     
-                    if userName.isEmpty && tap {
+                    if userName.isEmpty && isButtonTapped {
                         Text("Please enter a username")
                             .foregroundColor(.red)
                             .custom(font: .regular, size: 16)
@@ -38,7 +38,7 @@ struct LoginView: View {
                     avatarImageView(image: image, isAnimationActive: isAnimationActive)
                 } else {
                     Text("No image selected!")
-                        .custom(font: .regular, size: isSmallHeight() ? 15:18)
+                        .custom(font: .regular, size: isSmallHeight() ? 13:16)
                 }
                 
                 Button("Tap to Select Image") {
@@ -48,7 +48,7 @@ struct LoginView: View {
             }
             
             LongButton(text: "Continue") {
-                tap = true
+                isButtonTapped = true
                 if !userName.isEmpty {
                     isAnimationActive = true
                     
@@ -108,7 +108,7 @@ struct LoginView: View {
     
     private func welcomeText(greeting: String = "Welcome!", name: String = "") -> some View {
         Text("\(greeting) \(name)")
-            .custom(font: .bold, size: tap ? 28:32)
+            .custom(font: .bold, size: isButtonTapped ? 28:32)
             .padding()
             .offset(y: isAnimationActive ? 50 : 0) // Offset the image when animation is active
         

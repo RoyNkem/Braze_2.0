@@ -11,6 +11,7 @@
 		FA47A5002A8E78C80046EBD1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A4FF2A8E78C80046EBD1 /* LoginView.swift */; };
 		FA47A5022A8E79600046EBD1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A5012A8E79600046EBD1 /* ImagePicker.swift */; };
 		FA47A5042A8ED28C0046EBD1 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A5032A8ED28C0046EBD1 /* UserDefaultManager.swift */; };
+		FA47A5062A8EEACA0046EBD1 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A5052A8EEACA0046EBD1 /* VisualEffectView.swift */; };
 		FAB5F3B42A890A9400B5A5AC /* Braze_Version_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */; };
 		FAB5F3B62A890A9400B5A5AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B52A890A9400B5A5AC /* HomeView.swift */; };
 		FAB5F3B82A890A9800B5A5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB5F3B72A890A9800B5A5AC /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		FA47A4FF2A8E78C80046EBD1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA47A5012A8E79600046EBD1 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FA47A5032A8ED28C0046EBD1 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultManager.swift; path = Braze_Version_2.0/Utilities/UserDefaultManager.swift; sourceTree = SOURCE_ROOT; };
+		FA47A5052A8EEACA0046EBD1 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		FAB5F3B02A890A9400B5A5AC /* Braze_Version_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braze_Version_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Braze_Version_2_0App.swift; sourceTree = "<group>"; };
 		FAB5F3B52A890A9400B5A5AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		FAB5F3E92A890CA000B5A5AC /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				FA47A5052A8EEACA0046EBD1 /* VisualEffectView.swift */,
 				FAB5F4212A89191B00B5A5AC /* AngularButtonStyle.swift */,
 				FAB5F41F2A89191A00B5A5AC /* ForegroundLinearGradient.swift */,
 				FAB5F41E2A89191A00B5A5AC /* InputStyle.swift */,
@@ -531,6 +534,7 @@
 				FAB5F41C2A89188400B5A5AC /* LongButton.swift in Sources */,
 				FAB5F4342A8919B700B5A5AC /* PortfolioDataService.swift in Sources */,
 				FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */,
+				FA47A5062A8EEACA0046EBD1 /* VisualEffectView.swift in Sources */,
 				FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */,
 				FA47A5002A8E78C80046EBD1 /* LoginView.swift in Sources */,
 				FAB5F4252A89191B00B5A5AC /* StrokeStyle.swift in Sources */,
