@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA3C6BAC2A89686A00B9FFC8 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */; };
+		FA47A5002A8E78C80046EBD1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A4FF2A8E78C80046EBD1 /* LoginView.swift */; };
+		FA47A5022A8E79600046EBD1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47A5012A8E79600046EBD1 /* ImagePicker.swift */; };
 		FAB5F3B42A890A9400B5A5AC /* Braze_Version_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */; };
 		FAB5F3B62A890A9400B5A5AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F3B52A890A9400B5A5AC /* HomeView.swift */; };
 		FAB5F3B82A890A9800B5A5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB5F3B72A890A9800B5A5AC /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 /* Begin PBXFileReference section */
 		FA3C6BAB2A89686A00B9FFC8 /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		FA3C6BAD2A8984BE00B9FFC8 /* Braze-Version-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Braze-Version-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FA47A4FF2A8E78C80046EBD1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FA47A5012A8E79600046EBD1 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FAB5F3B02A890A9400B5A5AC /* Braze_Version_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braze_Version_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5F3B32A890A9400B5A5AC /* Braze_Version_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Braze_Version_2_0App.swift; sourceTree = "<group>"; };
 		FAB5F3B52A890A9400B5A5AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		FAB5F3E22A890C5400B5A5AC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FA47A5012A8E79600046EBD1 /* ImagePicker.swift */,
 				FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */,
 				FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */,
 				FAB5F4382A891AEE00B5A5AC /* LocalFileManager.swift */,
@@ -278,6 +283,7 @@
 			children = (
 				FAB5F3FD2A89167E00B5A5AC /* LaunchScreenView.swift */,
 				FAB5F3B52A890A9400B5A5AC /* HomeView.swift */,
+				FA47A4FF2A8E78C80046EBD1 /* LoginView.swift */,
 				FAB5F4052A89176600B5A5AC /* AddCoinPortfolioView.swift */,
 				FAB5F4062A89176600B5A5AC /* CoinInfoSnippetView.swift */,
 				FAB5F4032A89176500B5A5AC /* CoinRowViews.swift */,
@@ -522,6 +528,7 @@
 				FAB5F4342A8919B700B5A5AC /* PortfolioDataService.swift in Sources */,
 				FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */,
 				FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */,
+				FA47A5002A8E78C80046EBD1 /* LoginView.swift in Sources */,
 				FAB5F4252A89191B00B5A5AC /* StrokeStyle.swift in Sources */,
 				FAB5F4192A89188400B5A5AC /* CircleButtonView.swift in Sources */,
 				FAB5F3FE2A89167E00B5A5AC /* LaunchScreenView.swift in Sources */,
@@ -531,6 +538,7 @@
 				FAB5F3FC2A89167100B5A5AC /* Animation.swift in Sources */,
 				FAB5F42C2A89197400B5A5AC /* SearchBarView.swift in Sources */,
 				FAB5F4362A8919B700B5A5AC /* CoinImageService.swift in Sources */,
+				FA47A5022A8E79600046EBD1 /* ImagePicker.swift in Sources */,
 				FAB5F4102A89187600B5A5AC /* CoinLogoView.swift in Sources */,
 				FAB5F43C2A891AEE00B5A5AC /* LocalFileManager.swift in Sources */,
 			);
