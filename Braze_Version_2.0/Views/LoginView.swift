@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var isImagePickerPresented = false
     @State private var isAnimationActive = false
     @State private var tap = false
+    // Create a constant to store the reference to UserDefaultManager.shared
+    let userdefault = UserDefaultManager.shared
     
     var body: some View {
         VStack {
@@ -48,6 +50,17 @@ struct LoginView: View {
                 tap = true
                 if !userName.isEmpty {
                     isAnimationActive = true
+                    // Save user's name and selectedImage using UserDefaultManager
+                    if let profileImageData = selectedImage?.jpegData(compressionQuality: 0.8) {
+                        do {
+                            try userdefault.saveUserData(username: userName,
+                                                         profileImageData: profileImageData
+                            )
+                        } catch {
+                            // Handle error if saving fails
+                            print("Error saving user data: \(error)")
+                        }
+                    }
                     withAnimation(.easeInOut(duration: 0.5)) {
                         // Save user's name and selectedImage, and navigate to the next screen
                     }
@@ -57,9 +70,9 @@ struct LoginView: View {
             .opacity(isAnimationActive ? 0:1) // Transition effect when the button disappears
             .animation(.easeInOut(duration: 0.5), value: isAnimationActive)
             
+            //View after tapping Continue button
             if isAnimationActive {
                 welcomeText(greeting: "You're all set up,", name: userName)
-                Color.red
                 avatarImageView(image: selectedImage, isAnimationActive: isAnimationActive)
             }
             
@@ -94,7 +107,7 @@ struct LoginView: View {
     //MARK: - welcomeText
     private func welcomeText(greeting: String = "Welcome!", name: String = "") -> some View {
         Text("\(greeting) \(name)")
-            .custom(font: .bold, size: isSmallHeight() ? 30:35)
+            .custom(font: .bold, size: tap ? 28:32)
             .padding()
     }
 }
