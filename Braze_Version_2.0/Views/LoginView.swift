@@ -14,7 +14,7 @@ struct LoginView: View {
     @State private var isAnimationActive = false
     @State private var tap = false
     // Create a constant to store the reference to UserDefaultManager.shared
-    let userdefault = UserDefaultManager.shared
+    private let userdefault = UserDefaultManager.shared
     
     var body: some View {
         VStack {
@@ -24,6 +24,7 @@ struct LoginView: View {
                 VStack {
                     TextField("Enter your username...", text: $userName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .disableAutocorrection(true)
                     
                     if userName.isEmpty && tap {
                         Text("Please enter a username")
@@ -62,7 +63,7 @@ struct LoginView: View {
                         }
                     }
                     withAnimation(.easeInOut(duration: 0.5)) {
-                        // Save user's name and selectedImage, and navigate to the next screen
+
                     }
                 }
             }
@@ -72,7 +73,7 @@ struct LoginView: View {
             
             //View after tapping Continue button
             if isAnimationActive {
-                welcomeText(greeting: "You're all set up,", name: userName)
+                welcomeText(greeting: "You're all set up,", name: userName + "!")
                 avatarImageView(image: selectedImage, isAnimationActive: isAnimationActive)
             }
             
@@ -92,14 +93,15 @@ struct LoginView: View {
         ZStack {
             Circle()
                 .fill(Color.theme.homeBackground)
-                .frame(width: 120, height: 120)
+                .frame(width: 100, height: 100)
                 .shadow(radius: 5)
-            
             Image(uiImage: image ?? UIImage(systemName: "person.circle.fill")!)
                 .resizable()
+                .renderingMode(.original)
                 .scaledToFit()
-                .frame(width: isSmallHeight() ? 80:100, height: isSmallHeight() ? 80:100)
+                .frame(width: isSmallHeight() ? 70:80, height: isSmallHeight() ? 70:80)
                 .clipShape(Circle())
+
         }
         .offset(y: isAnimationActive ? -150 : 0) // Offset the image when animation is active
     }
@@ -109,6 +111,8 @@ struct LoginView: View {
         Text("\(greeting) \(name)")
             .custom(font: .bold, size: tap ? 28:32)
             .padding()
+            .offset(y: isAnimationActive ? 50 : 0) // Offset the image when animation is active
+
     }
 }
 
