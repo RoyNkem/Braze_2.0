@@ -28,10 +28,10 @@ struct UserDefaultManager {
     
     // MARK: - Login Status
     
-    var isLoggedIn: Bool {
-        get { userDefaults.bool(forKey: UserDefaultsKeys.isLoggedIn) }
-        set { userDefaults.set(newValue, forKey: UserDefaultsKeys.isLoggedIn) }
-    }
+//    var isLoggedIn: Bool {
+//        get { userDefaults.bool(forKey: UserDefaultsKeys.isLoggedIn) }
+//        set { userDefaults.set(newValue, forKey: UserDefaultsKeys.isLoggedIn) }
+//    }
     
     // MARK: - Clear User Data
     

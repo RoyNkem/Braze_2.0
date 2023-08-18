@@ -11,11 +11,20 @@ import SwiftUI
 struct Braze_Version_2_0App: App {
     @StateObject private var launchScreenManager = LaunchScreenStateManager()
     @StateObject private var vm = HomeViewModel()
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
     
     var body: some Scene {
         WindowGroup {
             Group {
-                if launchScreenManager.state == .started {
+                if isLoggedIn {
+                    // Show HomeView since user is logged in
+                    NavigationView {
+                        HomeView()
+                            .navigationBarHidden(true)
+                    }
+                    .environmentObject(vm)
+                } else if launchScreenManager.state == .started {
+                    // Show LaunchScreenView
                     LaunchScreenView()
                         .onAppear {
                             Task {
@@ -23,14 +32,13 @@ struct Braze_Version_2_0App: App {
                             }
                         }
                 } else {
-                    NavigationView {
-                        HomeView()
-                            .navigationBarHidden(true)
-                    }
-                    .environmentObject(vm) // If a view uses an @EnvironmentObject, you must create the model object by calling the environmentObject(_:) modifier on an ancestor view. HomeView uses the HomeViewModel object, so you create it in BrazeApp.swift when it creates HomeView
+                    // Show LoginView if user is not logged in and launch screen is finished
+                    LoginView()
+                        .environmentObject(vm)
+                        .padding(.horizontal)
                 }
             }
-            
         }
     }
 }
+

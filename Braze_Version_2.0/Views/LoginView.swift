@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct LoginView: View {
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
     @State private var userName = ""
     @State private var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     @State private var isAnimationActive = false
     @State private var isButtonTapped = false
     // Create a constant to store the reference to UserDefaultManager.shared
-    private let userdefault = UserDefaultManager.shared
+    private var userdefault = UserDefaultManager.shared
     
     var body: some View {
         VStack {
@@ -57,6 +58,7 @@ struct LoginView: View {
                         
                         withAnimation(.easeInOut(duration: 0.5)) {
                             //navigation logic here
+                            
                         }
                     } catch let err as UserDefaultError {
                         handleUserDefaultError(err)
@@ -79,6 +81,9 @@ struct LoginView: View {
         .custom(font: .bold, size: isSmallHeight() ? 13:16)
         .background(
             LinearGradient(colors: [Color.theme.blue.opacity(0.6), Color.theme.purple.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
+        .background(
+            VisualEffectView(effect: UIBlurEffect(style: .regular)) // Apply a visual effect background
         )
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(image: $selectedImage)
@@ -114,13 +119,14 @@ struct LoginView: View {
         
     }
     
-    // MARK: - Helper Methods
+    // MARK: - Helper Methods UserDefault
 
     private func saveUserData() throws {
         let defaultImage = UIImage(systemName: "person.circle.fill")!
         let selectedImageData = selectedImage?.jpegData(compressionQuality: 0.8) ?? defaultImage.jpegData(compressionQuality: 0.8)!
         
         try userdefault.saveUserData(username: userName, profileImageData: selectedImageData)
+        isLoggedIn = true
     }
 
     private func handleUserDefaultError(_ error: UserDefaultError) {

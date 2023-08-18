@@ -18,7 +18,6 @@ struct InputStyle: ViewModifier {
         content
             .padding(10)
             .padding(.leading, 50)
-        //            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .strokeStyle(cornerRadius: 20)
             .overlay(
                 Image(systemName: icon)
