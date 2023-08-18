@@ -19,12 +19,7 @@ struct Braze_Version_2_0App: App {
                 if isLoggedIn {
                     if launchScreenManager.state == .started {
                         // Show LaunchScreenView
-                        LaunchScreenView()
-                            .onAppear {
-                                Task {
-                                    launchScreenManager.dismiss()
-                                }
-                            }
+                        showLaunchScreen()
                     } else {
                         NavigationView {
                             HomeView()
@@ -33,13 +28,26 @@ struct Braze_Version_2_0App: App {
                         .environmentObject(vm)
                     }
                 } else {
-                    // Show LoginView if user is not logged in and launch screen is finished
-                    LoginView()
-                        .environmentObject(vm)
-                        .padding(.horizontal)
+                    if launchScreenManager.state == .started {
+                        // Show LaunchScreenView
+                        showLaunchScreen()
+                    } else {                    // Show LoginView if user is not logged in and launch screen is finished
+                        LoginView()
+                            .environmentObject(vm)
+                            .padding(.horizontal)
+                    }
                 }
             }
         }
+    }
+    
+    private func showLaunchScreen() -> some View {
+        LaunchScreenView()
+            .onAppear {
+                Task {
+                    launchScreenManager.dismiss()
+                }
+            }
     }
 }
 

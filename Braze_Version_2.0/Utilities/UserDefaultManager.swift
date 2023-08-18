@@ -28,18 +28,17 @@ struct UserDefaultManager {
     
     // MARK: - Login Status
     
-//    var isLoggedIn: Bool {
-//        get { userDefaults.bool(forKey: UserDefaultsKeys.isLoggedIn) }
-//        set { userDefaults.set(newValue, forKey: UserDefaultsKeys.isLoggedIn) }
-//    }
-    
-    // MARK: - Clear User Data
-    
-    //    func clearUserData() {
-    //        userDefaults.removeObject(forKey: UserDefaultsKeys.username)
-    //        userDefaults.removeObject(forKey: UserDefaultsKeys.profileImageData)
-    //        isLoggedIn = false
+    //    var isLoggedIn: Bool {
+    //        get { userDefaults.bool(forKey: UserDefaultsKeys.isLoggedIn) }
+    //        set { userDefaults.set(newValue, forKey: UserDefaultsKeys.isLoggedIn) }
     //    }
+    
+    //MARK: - Clear User Data
+    
+    func clearUserData() {
+        userDefaults.removeObject(forKey: UserDefaultsKeys.username)
+        userDefaults.removeObject(forKey: UserDefaultsKeys.profileImageData)
+    }
     
     // MARK: - Constants
     

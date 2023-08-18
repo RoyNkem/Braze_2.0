@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // new sheet showing Portfolio View
     @State private var showAddPortfolioView: Bool = false // new sheet to add & edit user portfolio
     @State var showSearchBar: Bool = false
-    
+    @State private var isActionSheetPresented = false
+
     private let userDefaults = UserDefaultManager.shared
     private let rows: [GridItem]  = Array(repeating: GridItem(.adaptive(minimum: 200), spacing: 15), count: 1)
     private var radius: CGFloat = 25.0
@@ -59,8 +61,28 @@ struct HomeView: View {
         }
         .background(Color.theme.homeBackground.opacity(0.3))
         .ignoresSafeArea(.container, edges: .top)
+        .actionSheet(isPresented: $isActionSheetPresented) {
+            ActionSheet(title: Text("Choose an option"), buttons: [
+                .default(Text("Log Out")) {
+                    logout()
+                },
+                .default(Text("Update User")) {
+                    updateUser()
+                },
+                .cancel()
+            ])
+        }
+        
     }
     
+    private func logout() {
+        isLoggedIn.toggle()
+        userDefaults.clearUserData()
+    }
+    
+    private func updateUser() {
+        isLoggedIn.toggle()
+    }
 }
 
 //MARK: PREVIEW
@@ -104,16 +126,19 @@ extension HomeView {
     private var profileRow: some View {
         HStack(alignment: .center, spacing: 15) {
             let (storedUsername, storedProfileImageData) = UserDefaultManager.shared.getUserData()
-            let image = UIImage(data: storedProfileImageData!)
+            let image = UIImage(data: storedProfileImageData ?? Data())
             
-            Image(uiImage: image!)
+            Image(uiImage: image ?? UIImage())
                 .resizable()
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)
                 .clipShape(RoundedRectangle(cornerSize: .init(width: radius, height: radius)))
                 .padding(.bottom, isSmallHeight() ? -5:-10)
+                .onTapGesture {
+                    isActionSheetPresented.toggle()
+                }
             
-            Text("Hi, \(storedUsername!)").bold()
+            Text("Welcome, \(storedUsername ?? "Roy")").bold()
                 .custom(font: .regular, size: isSmallWidth() ? 16:18)
                 .foregroundColor(.white.opacity(0.8))
             

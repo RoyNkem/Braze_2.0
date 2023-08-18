@@ -14,6 +14,9 @@ struct LoginView: View {
     @State private var isImagePickerPresented = false
     @State private var isAnimationActive = false
     @State private var isButtonTapped = false
+//    @State private var storedUsername: String?
+//    @State private var storedProfileImage: UIImage?
+    
     // Create a constant to store the reference to UserDefaultManager.shared
     private var userdefault = UserDefaultManager.shared
     
@@ -52,12 +55,12 @@ struct LoginView: View {
                 isButtonTapped = true
                 if !userName.isEmpty {
                     isAnimationActive = true
-                    
                     do {
                         try saveUserData()
                         
                         withAnimation(.easeInOut(duration: 0.5)) {
                             //navigation logic here
+                            //                            isPresented = false
                             
                         }
                     } catch let err as UserDefaultError {
@@ -89,6 +92,12 @@ struct LoginView: View {
             ImagePicker(image: $selectedImage)
         }
         .cornerRadius(isSmallHeight() ? 10:13)
+        .onAppear {
+            let (storedUsername, storedImageData) = userdefault.getUserData()
+            let image = UIImage(data: storedImageData ?? Data())
+            userName = storedUsername ?? ""
+            selectedImage = image
+        }
     }
     
     //MARK: - avatarImageView
@@ -107,6 +116,9 @@ struct LoginView: View {
             
         }
         .offset(y: isAnimationActive ? -150 : 0) // Offset the image when animation is active
+        .onTapGesture {
+            isImagePickerPresented = true
+        }
     }
     
     //MARK: - welcomeText
@@ -120,7 +132,7 @@ struct LoginView: View {
     }
     
     // MARK: - Helper Methods UserDefault
-
+    
     private func saveUserData() throws {
         let defaultImage = UIImage(systemName: "person.circle.fill")!
         let selectedImageData = selectedImage?.jpegData(compressionQuality: 0.8) ?? defaultImage.jpegData(compressionQuality: 0.8)!
@@ -128,12 +140,12 @@ struct LoginView: View {
         try userdefault.saveUserData(username: userName, profileImageData: selectedImageData)
         isLoggedIn = true
     }
-
+    
     private func handleUserDefaultError(_ error: UserDefaultError) {
         let errorDescription = UserDefaultErrorHandler.description(for: error)
         print("UserDefaultError: \(errorDescription)")
     }
-
+    
     private func handleOtherError(_ error: Error) {
         print("Error saving user data: \(error)")
     }
