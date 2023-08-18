@@ -17,20 +17,21 @@ struct Braze_Version_2_0App: App {
         WindowGroup {
             Group {
                 if isLoggedIn {
-                    // Show HomeView since user is logged in
-                    NavigationView {
-                        HomeView()
-                            .navigationBarHidden(true)
-                    }
-                    .environmentObject(vm)
-                } else if launchScreenManager.state == .started {
-                    // Show LaunchScreenView
-                    LaunchScreenView()
-                        .onAppear {
-                            Task {
-                                launchScreenManager.dismiss()
+                    if launchScreenManager.state == .started {
+                        // Show LaunchScreenView
+                        LaunchScreenView()
+                            .onAppear {
+                                Task {
+                                    launchScreenManager.dismiss()
+                                }
                             }
+                    } else {
+                        NavigationView {
+                            HomeView()
+                                .navigationBarHidden(true)
                         }
+                        .environmentObject(vm)
+                    }
                 } else {
                     // Show LoginView if user is not logged in and launch screen is finished
                     LoginView()
