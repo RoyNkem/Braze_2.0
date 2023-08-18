@@ -63,7 +63,7 @@ struct HomeView: View {
         .ignoresSafeArea(.container, edges: .top)
         .actionSheet(isPresented: $isActionSheetPresented) {
             ActionSheet(title: Text("Choose an option"), buttons: [
-                .default(Text("Log Out")) {
+                .destructive(Text("Log Out")) {
                     logout()
                 },
                 .default(Text("Update User")) {
@@ -128,7 +128,7 @@ extension HomeView {
             let (storedUsername, storedProfileImageData) = UserDefaultManager.shared.getUserData()
             let image = UIImage(data: storedProfileImageData ?? Data())
             
-            Image(uiImage: image ?? UIImage())
+            Image(uiImage: (image ?? UIImage(systemName: "person.circle.fill")) ?? UIImage())
                 .resizable()
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)

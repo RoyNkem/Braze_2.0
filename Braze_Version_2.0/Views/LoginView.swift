@@ -21,82 +21,87 @@ struct LoginView: View {
     private var userdefault = UserDefaultManager.shared
     
     var body: some View {
-        VStack {
-            if !isAnimationActive {
-                welcomeText()
-                
-                VStack {
-                    TextField("Enter your username...", text: $userName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .disableAutocorrection(true)
+        ZStack {
+            ColorBlobView()
+            
+            VStack {
+                if !isAnimationActive {
+                    welcomeText()
                     
-                    if userName.isEmpty && isButtonTapped {
-                        Text("Please enter a username")
-                            .foregroundColor(.red)
-                            .custom(font: .regular, size: 16)
-                    }
-                }
-                .padding()
-                
-                if let image = selectedImage {
-                    avatarImageView(image: image, isAnimationActive: isAnimationActive)
-                } else {
-                    Text("No image selected!")
-                        .custom(font: .regular, size: isSmallHeight() ? 13:16)
-                }
-                
-                Button("Tap to Select Image") {
-                    isImagePickerPresented = true
-                }
-                .padding()
-            }
-            
-            LongButton(text: "Continue") {
-                isButtonTapped = true
-                if !userName.isEmpty {
-                    isAnimationActive = true
-                    do {
-                        try saveUserData()
+                    VStack {
+                        TextField("Enter your username...", text: $userName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .disableAutocorrection(true)
                         
-                        withAnimation(.easeInOut(duration: 0.5)) {
-                            //navigation logic here
-                            //                            isPresented = false
-                            
+                        if userName.isEmpty && isButtonTapped {
+                            Text("Please enter a username")
+                                .foregroundColor(.red)
+                                .custom(font: .regular, size: 16)
                         }
-                    } catch let err as UserDefaultError {
-                        handleUserDefaultError(err)
-                    } catch {
-                        handleOtherError(error)
+                    }
+                    .padding()
+                    
+                    if let image = selectedImage {
+                        avatarImageView(image: image, isAnimationActive: isAnimationActive)
+                    } else {
+                        Text("No image selected!")
+                            .custom(font: .regular, size: isSmallHeight() ? 13:16)
+                    }
+                    
+                    Button("Tap to Select Image") {
+                        isImagePickerPresented = true
+                    }
+                    .padding()
+                }
+                
+                LongButton(text: "Continue") {
+                    isButtonTapped = true
+                    if !userName.isEmpty {
+                        isAnimationActive = true
+                        do {
+                            try saveUserData()
+                            
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                //navigation logic here
+                                //                            isPresented = false
+                                
+                            }
+                        } catch let err as UserDefaultError {
+                            handleUserDefaultError(err)
+                        } catch {
+                            handleOtherError(error)
+                        }
                     }
                 }
+                .padding()
+                .opacity(isAnimationActive ? 0:1) // Transition effect when the button disappears
+                .animation(.easeInOut(duration: 0.5), value: isAnimationActive)
+                
+                //View after tapping Continue button
+                if isAnimationActive {
+                    welcomeText(greeting: "You're all set up,", name: userName + "!")
+                    avatarImageView(image: selectedImage, isAnimationActive: isAnimationActive)
+                }
+                
             }
-            .padding()
-            .opacity(isAnimationActive ? 0:1) // Transition effect when the button disappears
-            .animation(.easeInOut(duration: 0.5), value: isAnimationActive)
-            
-            //View after tapping Continue button
-            if isAnimationActive {
-                welcomeText(greeting: "You're all set up,", name: userName + "!")
-                avatarImageView(image: selectedImage, isAnimationActive: isAnimationActive)
+            .custom(font: .bold, size: isSmallHeight() ? 13:16)
+            .padding(.vertical)
+            .background(
+                LinearGradient(colors: [Color.theme.blue.opacity(0.6), Color.theme.purple.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
+            .background(
+                VisualEffectView(effect: UIBlurEffect(style: .regular)) // Apply a visual effect background
+            )
+            .sheet(isPresented: $isImagePickerPresented) {
+                ImagePicker(image: $selectedImage)
             }
-            
-        }
-        .custom(font: .bold, size: isSmallHeight() ? 13:16)
-        .background(
-            LinearGradient(colors: [Color.theme.blue.opacity(0.6), Color.theme.purple.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
-        )
-        .background(
-            VisualEffectView(effect: UIBlurEffect(style: .regular)) // Apply a visual effect background
-        )
-        .sheet(isPresented: $isImagePickerPresented) {
-            ImagePicker(image: $selectedImage)
-        }
-        .cornerRadius(isSmallHeight() ? 10:13)
-        .onAppear {
-            let (storedUsername, storedImageData) = userdefault.getUserData()
-            let image = UIImage(data: storedImageData ?? Data())
-            userName = storedUsername ?? ""
-            selectedImage = image
+            .cornerRadius(isSmallHeight() ? 10:13)
+            .onAppear {
+                let (storedUsername, storedImageData) = userdefault.getUserData()
+                let image = UIImage(data: storedImageData ?? Data())
+                userName = storedUsername ?? ""
+                selectedImage = image
+            }
         }
     }
     
