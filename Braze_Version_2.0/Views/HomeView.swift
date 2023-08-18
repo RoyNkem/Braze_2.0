@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var showAddPortfolioView: Bool = false // new sheet to add & edit user portfolio
     @State var showSearchBar: Bool = false
     
+    private let userDefaults = UserDefaultManager.shared
     private let rows: [GridItem]  = Array(repeating: GridItem(.adaptive(minimum: 200), spacing: 15), count: 1)
     private var radius: CGFloat = 25.0
     var size: CGFloat = 50
@@ -101,16 +102,19 @@ extension HomeView {
     
     //MARK: profileRow
     private var profileRow: some View {
-        HStack(spacing: 15) {
-            Image("avatar")
+        HStack(alignment: .center, spacing: 15) {
+            let (storedUsername, storedProfileImageData) = UserDefaultManager.shared.getUserData()
+            let image = UIImage(data: storedProfileImageData!)
+            
+            Image(uiImage: image!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: isSmallHeight() ? size*0.8 : size, height: isSmallHeight() ? size*0.8 : size)
                 .clipShape(RoundedRectangle(cornerSize: .init(width: radius, height: radius)))
                 .padding(.bottom, isSmallHeight() ? -5:-10)
             
-            Text("Hello, Roy").bold()
-                .font(.system(size: isSmallHeight() ? 14:16))
+            Text("Hi, \(storedUsername!)").bold()
+                .custom(font: .regular, size: isSmallWidth() ? 16:18)
                 .foregroundColor(.white.opacity(0.8))
             
             Spacer()
