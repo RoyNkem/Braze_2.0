@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/**
+ Model class representing statistics information.
+ 
+ Use this class to encapsulate various statistics data with options for percentage change display and associated coin details.
+ */
 class StatisticsModel: Identifiable {
     
     let id = UUID().uuidString
@@ -17,7 +22,17 @@ class StatisticsModel: Identifiable {
     let colors: [Color]
     let cardTitle: String
     
-    //custom init with percentageChange showing for initializatrion only when needed
+    /**
+     Custom initializer.
+     
+     - Parameters:
+     - title: Title of the statistic.
+     - value: Value associated with the statistic.
+     - percentageChange: Percentage change value (optional, default is nil).
+     - coin: Associated coin model (optional, default is nil).
+     - colors: Colors for visualization.
+     - cardTitle: Title for the card containing the statistic.
+     */
     init(title: String, value: String, percentageChange: Double? = nil, coin: CoinModel? = nil, colors: [Color], cardTitle: String) {
         self.title = title
         self.value = value

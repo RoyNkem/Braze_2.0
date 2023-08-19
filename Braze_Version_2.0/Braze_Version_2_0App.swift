@@ -31,7 +31,7 @@ struct Braze_Version_2_0App: App {
                     if launchScreenManager.state == .started {
                         // Show LaunchScreenView
                         showLaunchScreen()
-                    } else {                    // Show LoginView if user is not logged in and launch screen is finished
+                    } else { // Show LoginView if user is not logged in and launch screen is finished
                         LoginView()
                             .environmentObject(vm)
                             .padding(.horizontal)
