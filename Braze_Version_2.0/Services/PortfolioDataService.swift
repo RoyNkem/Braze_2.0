@@ -7,10 +7,13 @@
 
 import CoreData
 
-///Does all the logic to get portfolio data from Core Data
+/**
+ Service class responsible for managing portfolio data using Core Data.
+ 
+ This class handles operations to add, update, delete, and fetch portfolio data stored in Core Data.
+ */
 class PortfolioDataService {
-    
-    //set up coredata
+    // Core Data setup
     private let container: NSPersistentContainer
     private let containerName: String = "PortfolioContainer"
     private let entityName: String = "PortfolioEntity"
@@ -18,6 +21,9 @@ class PortfolioDataService {
     ///This array saves the result (PortfolioEntity objects) of fetch request from the view context. Bind & subscribe to this property from other views in the app.
     @Published var savedEntities: [PortfolioEntity] = []
     
+    /**
+     Initializes the PortfolioDataService and fetches existing portfolio data.
+     */
     init() {
         container = NSPersistentContainer(name: containerName)
         container.loadPersistentStores { _, error in
@@ -71,7 +77,7 @@ class PortfolioDataService {
         do {
             savedEntities = try container.viewContext.fetch(request) //call to fetch
         } catch let fetchError {
-           print("Error fetching Portfolio Entities: \(fetchError)")
+            print("Error fetching Portfolio Entities: \(fetchError)")
         }
     }
     
@@ -96,9 +102,11 @@ class PortfolioDataService {
         }
     }
     
-    ///Save the new context, re-fetch all coins from the context and set them to savedEntities var.
-    /// - Update savedEntities Arr which will be pushed to subscribers -> call getPortfolio func again to create a new fetch request and save them to the arr
-    //helper function called every time a write operation is done on object
+    /**
+     Applies changes by saving the context and updating the fetched portfolio data.
+     
+     This function is called after each write operation.
+     */
     private func applyChanges() {
         save()
         getPortfolio()

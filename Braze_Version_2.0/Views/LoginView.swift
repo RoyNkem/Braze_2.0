@@ -14,8 +14,6 @@ struct LoginView: View {
     @State private var isImagePickerPresented = false
     @State private var isAnimationActive = false
     @State private var isButtonTapped = false
-//    @State private var storedUsername: String?
-//    @State private var storedProfileImage: UIImage?
     
     // Create a constant to store the reference to UserDefaultManager.shared
     private var userdefault = UserDefaultManager.shared

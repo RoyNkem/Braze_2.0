@@ -8,17 +8,25 @@
 import Foundation
 import Combine
 
-// can implement fetchingData is Loading here to show progress view
-
+/**
+ Service class for managing coin data.
+ 
+ This class handles fetching and storing coin data from a remote API.
+ */
 final class CoinDataService {
     @Published var allCoins: [CoinModel] = []
     var coinSubscription: AnyCancellable?
     
-    init() { // when we initiliaze a coin data service, it initializes and calls func get    
+    init() { // when we initiliaze a coin data service, it initializes and calls func get
         getCoins()
     }
     
-     func getCoins() {
+    /**
+     Fetches coin data from a remote API.
+     
+     The function downloads and decodes the data, then updates the `allCoins` array.
+     */
+    func getCoins() {
         let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=24h"
         
         guard let url = URL(string: urlString) else { return }

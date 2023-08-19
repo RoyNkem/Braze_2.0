@@ -8,8 +8,12 @@
 import Foundation
 import Combine
 
+/**
+ Service class for retrieving market data.
+ 
+ This class handles fetching and storing global market data.
+ */
 class MarketDataService: ObservableObject {
-    
     @Published var marketData: MarketDataModel? = nil
     var marketDataSubscription: AnyCancellable?
     
@@ -17,6 +21,11 @@ class MarketDataService: ObservableObject {
         getData()
     }
     
+    /**
+     Fetches global market data from a remote API.
+     
+     The function downloads and decodes the data, then updates the `marketData` property.
+     */
     func getData() {
         let urlString = "https://api.coingecko.com/api/v3/global"
         

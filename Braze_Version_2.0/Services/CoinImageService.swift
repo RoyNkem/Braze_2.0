@@ -8,8 +8,12 @@
 import SwiftUI
 import Combine
 
+/**
+ Service class for managing coin images.
+ 
+ This class handles downloading, caching, and storing coin images.
+ */
 final class CoinImageService {
-    
     @Published var image: UIImage? = nil
     
     private var imageSubscription: AnyCancellable?
@@ -18,6 +22,11 @@ final class CoinImageService {
     private let folderName = " coin_images"
     private let imageName: String
     
+    /**
+     Initializes the CoinImageService with a coin model and fetches the associated coin image.
+     
+     - Parameter coin: The coin model for which the image is fetched.
+     */
     init(coin: CoinModel) {
         self.coin = coin
         self.imageName = coin.id
@@ -30,10 +39,10 @@ final class CoinImageService {
             image = savedImage
         } else {
             downloadCoinImage()
-
+            
         }
     }
-     
+    
     private func downloadCoinImage() {
         guard let url = URL(string: coin.image) else { return }
         
