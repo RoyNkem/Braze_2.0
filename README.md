@@ -105,14 +105,16 @@ Using `Combine` framework with `Subscribers/Publishers` for efficient Data loadi
 
 ### Features 
 - [x] CoreData
+- [x] Launch Animation
+- [x] Sign In/Update User
 - [x] Combine Framework 
 - [x] Light/dark mode 
 - [x] Live prices
 - [x] User Portfolio 
-- [ ] iPad support
 - [x] MVVM architecture
 - [x] Search Features
-- [x] Details of Coins 
+- [x] Details of Coins
+- [ ] iPad support
 - [ ] Coin Price History
 
 ### Prerequisites
