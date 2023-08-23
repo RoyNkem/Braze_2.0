@@ -115,6 +115,7 @@ Using `Combine` framework with `Subscribers/Publishers` for efficient Data loadi
 - [x] Search Features
 - [x] Details of Coins
 - [ ] iPad support
+- [ ] Currency Selection 
 - [ ] Coin Price History
 
 ### Prerequisites
