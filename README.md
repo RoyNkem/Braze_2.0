@@ -147,7 +147,7 @@ _No API key or npm packages are required for the Braze app. Below are the steps 
    ```
    
 3. Run the App
-   Launch the Braze app using a development server:
+   Launch the Braze app using Xcode:
    ```sh
    open Braze_2.0.xcodeproj
    ```
