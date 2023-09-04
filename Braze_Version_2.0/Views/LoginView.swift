@@ -59,11 +59,6 @@ struct LoginView: View {
                         do {
                             try saveUserData()
                             
-                            withAnimation(.easeInOut(duration: 0.5)) {
-                                //navigation logic here
-                                //                            isPresented = false
-                                
-                            }
                         } catch let err as UserDefaultError {
                             handleUserDefaultError(err)
                         } catch {

@@ -17,7 +17,7 @@ final class CoinDataService {
     @Published var allCoins: [CoinModel] = []
     var coinSubscription: AnyCancellable?
     
-    init() { // when we initiliaze a coin data service, it initializes and calls func get
+    init() {
         getCoins()
     }
     

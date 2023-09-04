@@ -125,7 +125,7 @@ extension HomeView {
     //MARK: profileRow
     private var profileRow: some View {
         HStack(alignment: .center, spacing: 15) {
-            let (storedUsername, storedProfileImageData) = UserDefaultManager.shared.getUserData()
+            let (storedUsername, storedProfileImageData) = userDefaults.getUserData()
             let image = UIImage(data: storedProfileImageData ?? Data())
             
             Image(uiImage: (image ?? UIImage(systemName: "person.circle.fill")) ?? UIImage())
