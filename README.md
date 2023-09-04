@@ -105,14 +105,17 @@ Using `Combine` framework with `Subscribers/Publishers` for efficient Data loadi
 
 ### Features 
 - [x] CoreData
+- [x] Launch Animation
+- [x] Sign In/Update User
 - [x] Combine Framework 
 - [x] Light/dark mode 
 - [x] Live prices
 - [x] User Portfolio 
-- [ ] iPad support
 - [x] MVVM architecture
 - [x] Search Features
-- [x] Details of Coins 
+- [x] Details of Coins
+- [ ] iPad support
+- [ ] Currency Selection 
 - [ ] Coin Price History
 
 ### Prerequisites
@@ -144,7 +147,7 @@ _No API key or npm packages are required for the Braze app. Below are the steps 
    ```
    
 3. Run the App
-   Launch the Braze app using a development server:
+   Launch the Braze app using Xcode:
    ```sh
    open Braze_2.0.xcodeproj
    ```
