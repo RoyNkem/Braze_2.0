@@ -8,6 +8,8 @@
 import Foundation
 
 extension Double {
+    private static let defaultLocale = Locale(identifier: "en_US")
+    
     //MARK: currencyFormatter2
     /// Converts Double types to formatted Currency type with 2 decimal places
     /// ```
@@ -17,6 +19,7 @@ extension Double {
     private var currencyFormatter2: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
+        formatter.locale = Self.defaultLocale
         formatter.numberStyle = .currency
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
@@ -29,11 +32,14 @@ extension Double {
     /// Examples:
     /// Convert 1234.56 to "$1234.56"
     /// ```
+    /// - Parameter locale: locale to determine the currency
     /// - Returns: A string containing the formatted value of number using the receiver’s current settings.
-    func asCurrencyWithTwoDecimals() -> String {
+    func asCurrencyWithTwoDecimals(locale: Locale = Self.defaultLocale) -> String {
         
         let number = NSNumber(value: self)
-        return currencyFormatter2.string(from: number) ?? "$0.00"
+        let formatter = currencyFormatter2
+        formatter.locale = locale
+        return formatter.string(from: number) ?? "$0.00"
     }
 
     //MARK: currencyFormatter6
