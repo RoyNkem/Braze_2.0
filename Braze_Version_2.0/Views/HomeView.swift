@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @AppStorage("isLoggedIn") private var isLoggedIn = false
     @EnvironmentObject private var vm: HomeViewModel
+    @StateObject var greetingVM = GreetingViewModel()
     @State private var showPortfolio: Bool = false // new sheet showing Portfolio View
     @State private var showAddPortfolioView: Bool = false // new sheet to add & edit user portfolio
     @State var showSearchBar: Bool = false
@@ -138,7 +139,7 @@ extension HomeView {
                     isActionSheetPresented.toggle()
                 }
             
-            Text("Welcome, \(storedUsername ?? "Roy")").bold()
+            Text("\(greetingVM.greeting) \(storedUsername ?? "Roy")").bold()
                 .custom(font: .regular, size: isSmallWidth() ? 16:18)
                 .foregroundColor(.white.opacity(0.8))
             

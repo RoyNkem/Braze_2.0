@@ -60,6 +60,7 @@
 		FAB5F43D2A891AEE00B5A5AC /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F4392A891AEE00B5A5AC /* PreferenceKeys.swift */; };
 		FAB5F43E2A891AEE00B5A5AC /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */; };
 		FAB5F43F2A891AEE00B5A5AC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */; };
+		FABCB40D2AA6C8B20019006C /* GreetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCB40C2AA6C8B20019006C /* GreetingViewModel.swift */; };
 		FACC2C6E2A8F1C8D00142C9A /* ColorBlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC2C6D2A8F1C8D00142C9A /* ColorBlobView.swift */; };
 		FAF5969D2A8C05CF000D2CB1 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */; };
 		FAF5969F2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */; };
@@ -140,6 +141,7 @@
 		FAB5F4392A891AEE00B5A5AC /* PreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		FAB5F43A2A891AEE00B5A5AC /* HapticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		FAB5F43B2A891AEE00B5A5AC /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		FABCB40C2AA6C8B20019006C /* GreetingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreetingViewModel.swift; path = Braze_Version_2.0/GreetingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		FACC2C6D2A8F1C8D00142C9A /* ColorBlobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBlobView.swift; path = Braze_Version_2.0/Components/ColorBlobView.swift; sourceTree = SOURCE_ROOT; };
 		FAF5969C2A8C05CE000D2CB1 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		FAF5969E2A8CBCF5000D2CB1 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		FAB5F3FF2A89171E00B5A5AC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FABCB40C2AA6C8B20019006C /* GreetingViewModel.swift */,
 				FAB5F4002A89171E00B5A5AC /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -545,6 +548,7 @@
 				FAB5F4192A89188400B5A5AC /* CircleButtonView.swift in Sources */,
 				FAB5F3FE2A89167E00B5A5AC /* LaunchScreenView.swift in Sources */,
 				FAB5F4012A89171E00B5A5AC /* HomeViewModel.swift in Sources */,
+				FABCB40D2AA6C8B20019006C /* GreetingViewModel.swift in Sources */,
 				FAB5F41A2A89188400B5A5AC /* XMarkButton.swift in Sources */,
 				FAB5F4112A89187600B5A5AC /* CoinImageViewModel.swift in Sources */,
 				FAB5F3FC2A89167100B5A5AC /* Animation.swift in Sources */,
