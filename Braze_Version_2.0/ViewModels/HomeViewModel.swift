@@ -241,8 +241,8 @@ class HomeViewModel: ObservableObject {
     }
     
     func totalPortfolioCoinsStringValue() -> String {
-        let userSelectedLocale = Locale(identifier: "fr_FR")
-        return totalPortfolioCoinsValue().asCurrencyWithTwoDecimals(locale: userSelectedLocale)
+//        let userSelectedLocale = Locale(identifier: "fr_FR")
+        return totalPortfolioCoinsValue().asCurrencyWithTwoDecimals()
     }
     
     func percentageVal(coin: CoinModel) -> String {

@@ -35,7 +35,7 @@ struct SearchBarView: View {
             HStack {
                 if showPortfolio == false {
                     Text("Live Prices")
-                        .custom(font: .bold, size: isSmallWidth() ? 18:24)
+                        .custom(font: .bold, size: isSmallWidth() ? 22:24)
                 }
                 
                 Spacer()
@@ -83,7 +83,7 @@ extension SearchBarView {
     private var textfield: some View {
         TextField(showPortfolio ? "Find coin in portfolio" : "Search by name or symbol...",
                   text: $searchText)
-            .custom(font: .regular, size: isSmallWidth() ? 14:18)
+            .custom(font: .regular, size: isSmallWidth() ? 15:18)
             .disableAutocorrection(true)
             .foregroundColor(.theme.accentColor)
             .overlay(alignment: .trailing, content: {
