@@ -187,16 +187,24 @@ extension HomeView {
             Text(vm.totalPortfolioCoinsStringValue())
                 .custom(font: .bold, size: isSmallHeight() ? 30:35)
             
-            Text(vm.totalPercentageChange(portfolioCoins: vm.portfolioCoins).asPercentageString())
-                .foregroundColor(.black)
-                .padding(5)
-                .background(Color.green.opacity(0.7))
-                .cornerRadius(10)
-                .padding(.leading, isSmallWidth() ? 7:10)
-                .offset(y: -10)
+            portfolioPercentageView(vm.totalPercentageChange(portfolioCoins: vm.portfolioCoins))
+           
         }
         .padding(.top, isSmallHeight() ? -9:-12)
         .padding(.bottom,isSmallHeight() ? 1:5)
+    }
+    
+    private func portfolioPercentageView(_ percent: Double) -> some View {
+        Text(percent.asPercentageString())
+            .foregroundColor(.black)
+            .padding(5)
+            .background(
+                percent >= 0 ? Color.theme.green.opacity(0.7) :
+                    Color.theme.red.opacity(0.7)
+            )
+            .cornerRadius(10)
+            .padding(.leading, isSmallWidth() ? 7:10)
+            .offset(y: -10)
     }
     
     //MARK: searchbar
