@@ -240,6 +240,11 @@ class HomeViewModel: ObservableObject {
         return portfolioCoins.map { $0.currentHoldingsValue }.reduce(0, +)
     }
     
+    func totalPortfolioCoinsStringValue() -> String {
+        let userSelectedLocale = Locale(identifier: "fr_FR")
+        return totalPortfolioCoinsValue().asCurrencyWithTwoDecimals(locale: userSelectedLocale)
+    }
+    
     func percentageVal(coin: CoinModel) -> String {
         
         let fractionVal = coin.currentHoldingsValue / totalPortfolioCoinsValue()

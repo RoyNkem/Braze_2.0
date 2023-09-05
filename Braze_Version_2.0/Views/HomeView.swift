@@ -184,7 +184,7 @@ extension HomeView {
     //MARK: priceRow
     private var priceRow: some View {
         HStack(alignment: .bottom, spacing: 0) {
-            Text(vm.totalPortfolioCoinsValue().asCurrencyWithTwoDecimals())
+            Text(vm.totalPortfolioCoinsStringValue())
                 .custom(font: .bold, size: isSmallHeight() ? 30:35)
             
             Text(vm.totalPercentageChange(portfolioCoins: vm.portfolioCoins).asPercentageString())
